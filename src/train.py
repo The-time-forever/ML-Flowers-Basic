@@ -37,6 +37,7 @@ try:  # `python src/train.py`
         IMAGENET_MEAN,
         IMAGENET_STD,
         build_dataloaders,
+        build_eval_loader,
         denormalize,
     )
     from model import SimpleCNN, count_parameters
@@ -46,6 +47,7 @@ except ImportError:  # `python -m src.train`
         IMAGENET_MEAN,
         IMAGENET_STD,
         build_dataloaders,
+        build_eval_loader,
         denormalize,
     )
     from .model import SimpleCNN, count_parameters
@@ -134,10 +136,14 @@ def save_history(history: list[dict], path: Path) -> None:
 # --------------------------------------------------------------------------- #
 def plot_curves(history: list[dict], best_epoch: int, path: Path) -> None:
     epochs = [h["epoch"] for h in history]
+    has_clean = "train_eval_acc" in history[0]
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.4))
 
     ax = axes[0]
-    ax.plot(epochs, [h["train_loss"] for h in history], label="train")
+    ax.plot(epochs, [h["train_loss"] for h in history], label="train (augmented)")
+    if has_clean:
+        ax.plot(epochs, [h["train_eval_loss"] for h in history],
+                label="train (no aug)", color="green", lw=1.5)
     ax.plot(epochs, [h["val_loss"] for h in history], label="val")
     ax.axvline(best_epoch, ls="--", c="gray", lw=1, label=f"best epoch ({best_epoch})")
     ax.set_xlabel("Epoch")
@@ -147,7 +153,10 @@ def plot_curves(history: list[dict], best_epoch: int, path: Path) -> None:
     ax.spines[["top", "right"]].set_visible(False)
 
     ax = axes[1]
-    ax.plot(epochs, [h["train_acc"] for h in history], label="train")
+    ax.plot(epochs, [h["train_acc"] for h in history], label="train (augmented)")
+    if has_clean:
+        ax.plot(epochs, [h["train_eval_acc"] for h in history],
+                label="train (no aug)", color="green", lw=1.5)
     ax.plot(epochs, [h["val_acc"] for h in history], label="val")
     ax.axvline(best_epoch, ls="--", c="gray", lw=1)
     ax.set_xlabel("Epoch")
@@ -242,17 +251,38 @@ def write_report(
     a(f"- 优化：AdamW lr={args.lr}, weight_decay={args.weight_decay}, "
       f"cosine schedule, label smoothing={args.label_smoothing}, AMP={not args.no_amp}")
     a(f"- 训练：{args.epochs} epochs（early stopping patience={args.patience}），"
-      f"batch size={args.batch_size}，seed={args.seed}\n")
+      f"batch size={args.batch_size}，seed={args.seed}")
+    a("- 诊断指标：每轮训练后用**验证预处理**（无增强、dropout off）再评估一次训练集，"
+      "得到可与 val 直接比较的 `train_eval_acc`\n")
+
+    best_row = next((h for h in history if h["epoch"] == best_epoch), {})
+    clean_acc = best_row.get("train_eval_acc")
 
     a("## 结果\n")
     a(f"| 指标 | 数值 |")
     a("|---|---:|")
     a(f"| 最佳 epoch | {best_epoch} |")
     a(f"| 最佳验证准确率 | {best_val_acc:.4f} |")
+    if clean_acc is not None:
+        a(f"| 最佳 epoch 训练集准确率（无增强） | {clean_acc:.4f} |")
+        a(f"| 验证 - 训练差距 | {best_val_acc - clean_acc:+.4f} |")
     a(f"| 测试准确率 | **{test_acc:.4f}** |")
     a(f"| 测试 Macro-F1 | **{macro_f1:.4f}** |")
     a(f"| 测试错误数 | {n_wrong} / {int(cm.sum())} |")
     a("")
+
+    if clean_acc is not None:
+        gap = best_val_acc - clean_acc
+        if gap < -0.05:
+            diagnosis = (f"验证集比无增强训练集低 {abs(gap)*100:.1f} 个百分点，"
+                         "存在一定过拟合；可加强增强、提高 weight decay、使用 EMA 或增加数据。")
+        elif gap > 0.01:
+            diagnosis = (f"验证集比无增强训练集高 {gap*100:.1f} 个百分点，"
+                         "说明增强/正则较强或训练集更难，模型尚未充分利用训练集。")
+        else:
+            diagnosis = (f"验证集与无增强训练集仅差 {abs(gap)*100:.1f} 个百分点，"
+                         "拟合程度合理，瓶颈更可能在模型容量或数据本身。")
+        a(f"**拟合诊断**：{diagnosis}\n")
 
     a("## 各类别指标（test）\n")
     a("| 类别 | precision | recall | f1-score | support |")
@@ -293,7 +323,7 @@ def read_history(path: Path) -> list[dict]:
 
 
 def train_model(model, loaders, criterion, optimizer, scheduler, scaler,
-                device, amp, args, out_dir):
+                device, amp, args, out_dir, train_eval_loader=None):
     """Run the training loop and return (history, best_epoch, best_acc)."""
     history: list[dict] = []
     best_acc = 0.0
@@ -310,10 +340,15 @@ def train_model(model, loaders, criterion, optimizer, scheduler, scaler,
         val_loss, val_acc, _, _, _ = run_epoch(
             model, loaders["val"], criterion, device, amp=amp,
         )
+        clean_loss = clean_acc = None
+        if train_eval_loader is not None:
+            clean_loss, clean_acc, _, _, _ = run_epoch(
+                model, train_eval_loader, criterion, device, amp=amp,
+            )
         scheduler.step()
         elapsed = time.time() - t0
 
-        history.append({
+        row = {
             "epoch": epoch,
             "lr": optimizer.param_groups[0]["lr"],
             "train_loss": round(train_loss, 5),
@@ -321,7 +356,11 @@ def train_model(model, loaders, criterion, optimizer, scheduler, scaler,
             "val_loss": round(val_loss, 5),
             "val_acc": round(val_acc, 5),
             "seconds": round(elapsed, 2),
-        })
+        }
+        if clean_acc is not None:
+            row["train_eval_loss"] = round(clean_loss, 5)
+            row["train_eval_acc"] = round(clean_acc, 5)
+        history.append(row)
 
         improved = (val_acc > best_acc + 1e-9) or (
             abs(val_acc - best_acc) <= 1e-9 and val_loss < best_loss
@@ -342,9 +381,10 @@ def train_model(model, loaders, criterion, optimizer, scheduler, scaler,
             epochs_without_improvement += 1
 
         mark = " *" if improved else ""
+        clean_text = f" clean {clean_acc:.4f}" if clean_acc is not None else ""
         print(f"epoch {epoch:02d}/{args.epochs} | "
               f"train loss {train_loss:.4f} acc {train_acc:.4f} | "
-              f"val loss {val_loss:.4f} acc {val_acc:.4f} | "
+              f"val loss {val_loss:.4f} acc {val_acc:.4f}{clean_text} | "
               f"{elapsed:.1f}s{mark}", flush=True)
 
         if epochs_without_improvement >= args.patience:
@@ -387,7 +427,7 @@ def evaluate_and_export(model, loaders, criterion, device, amp, args,
 
     plot_curves(history, best_epoch, fig_dir / "10_training_curves.png")
     plot_confusion(cm, fig_dir / "11_confusion_matrix.png")
-    n_shown = plot_misclassified(
+    plot_misclassified(
         loaders["test"].dataset, preds, labels, probs,
         fig_dir / "12_misclassified.png",
     )
@@ -410,7 +450,7 @@ def evaluate_and_export(model, loaders, criterion, device, amp, args,
     )
     write_report(
         args, params, history, best_epoch, best_acc, test_acc, macro_f1,
-        report_dict, cm, n_shown, "figures", reports_dir / "cnn_baseline_report.md",
+        report_dict, cm, n_wrong, "figures", reports_dir / "cnn_baseline_report.md",
     )
 
     print(f"wrote {out_dir}/best.pt, history.csv")
@@ -436,6 +476,8 @@ def main() -> None:
                         help="DataLoader workers; 0 is fastest on Windows for this dataset")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--patience", type=int, default=8)
+    parser.add_argument("--no-train-eval", action="store_true",
+                        help="skip the clean train-set evaluation each epoch")
     parser.add_argument("--eval-only", action="store_true",
                         help="skip training and re-evaluate the saved best.pt")
     parser.add_argument("--no-amp", action="store_true")
@@ -464,6 +506,18 @@ def main() -> None:
     for split, loader in loaders.items():
         print(f"  {split:<5} {len(loader.dataset):>5} images, {len(loader):>3} batches")
 
+    train_eval_loader = None
+    if not args.no_train_eval and not args.eval_only:
+        train_eval_loader = build_eval_loader(
+            Path(args.splits_dir) / "train.csv",
+            data_dir=args.data_dir,
+            batch_size=args.batch_size,
+            num_workers=args.num_workers,
+            image_size=args.image_size,
+        )
+        print(f"  clean train eval: {len(train_eval_loader.dataset)} images "
+              "(val transforms, no augmentation)")
+
     model = SimpleCNN(num_classes=len(CLASSES)).to(device)
     params = count_parameters(model)
     print(f"model: SimpleCNN ({params:,} parameters)")
@@ -487,11 +541,16 @@ def main() -> None:
                                 weights_only=False)
         best_epoch = int(checkpoint["epoch"])
         best_acc = float(checkpoint["val_acc"])
+        # report the config that produced the checkpoint, not eval-only defaults
+        for key, value in checkpoint.get("config", {}).items():
+            if key not in ("out_dir", "reports_dir", "eval_only", "data_dir",
+                           "splits_dir", "num_workers"):
+                setattr(args, key, value)
         print(f"eval-only: best epoch {best_epoch}, val acc {best_acc:.4f}")
     else:
         history, best_epoch, best_acc = train_model(
             model, loaders, criterion, optimizer, scheduler, scaler,
-            device, amp, args, out_dir,
+            device, amp, args, out_dir, train_eval_loader,
         )
 
     evaluate_and_export(

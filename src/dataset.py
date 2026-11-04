@@ -132,6 +132,35 @@ def build_dataloaders(
     return loaders
 
 
+def build_eval_loader(
+    manifest: str | Path,
+    data_dir: str | Path = "flower_photos",
+    batch_size: int = 32,
+    num_workers: int = 0,
+    image_size: int = 224,
+    resize_size: int = 256,
+) -> DataLoader:
+    """Deterministic loader (val transforms) for any manifest.
+
+    Useful for measuring clean training accuracy without augmentation/dropout,
+    or for evaluating a split that normally uses the train pipeline.
+    """
+    dataset = FlowersDataset(
+        manifest,
+        data_dir,
+        build_transforms("val", image_size=image_size, resize_size=resize_size),
+    )
+    return DataLoader(
+        dataset,
+        batch_size=batch_size,
+        shuffle=False,
+        num_workers=num_workers,
+        pin_memory=torch.cuda.is_available(),
+        drop_last=False,
+        persistent_workers=num_workers > 0,
+    )
+
+
 def denormalize(
     tensor: torch.Tensor,
     mean: tuple[float, float, float] = IMAGENET_MEAN,

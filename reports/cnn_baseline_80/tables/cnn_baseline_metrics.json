@@ -1,0 +1,109 @@
+{
+  "config": {
+    "data_dir": "flower_photos",
+    "splits_dir": "splits",
+    "out_dir": "runs\\cnn_baseline_80",
+    "reports_dir": "reports\\cnn_baseline_80",
+    "epochs": 80,
+    "batch_size": 32,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "label_smoothing": 0.1,
+    "image_size": 224,
+    "num_workers": 0,
+    "seed": 42,
+    "patience": 15,
+    "no_train_eval": false,
+    "no_amp": false
+  },
+  "parameters": 1174501,
+  "device": "cuda",
+  "best_epoch": 75,
+  "best_val_acc": 0.87659,
+  "test_loss": 0.73464,
+  "test_acc": 0.84755,
+  "test_macro_f1": 0.84512,
+  "confusion_matrix": [
+    [
+      82,
+      5,
+      3,
+      2,
+      3
+    ],
+    [
+      6,
+      125,
+      1,
+      0,
+      3
+    ],
+    [
+      4,
+      1,
+      77,
+      2,
+      12
+    ],
+    [
+      3,
+      10,
+      1,
+      91,
+      0
+    ],
+    [
+      5,
+      4,
+      19,
+      0,
+      92
+    ]
+  ],
+  "per_class": {
+    "daisy": {
+      "precision": 0.82,
+      "recall": 0.8631578947368421,
+      "f1-score": 0.841025641025641,
+      "support": 95.0
+    },
+    "dandelion": {
+      "precision": 0.8620689655172413,
+      "recall": 0.9259259259259259,
+      "f1-score": 0.8928571428571429,
+      "support": 135.0
+    },
+    "roses": {
+      "precision": 0.7623762376237624,
+      "recall": 0.8020833333333334,
+      "f1-score": 0.7817258883248731,
+      "support": 96.0
+    },
+    "sunflowers": {
+      "precision": 0.9578947368421052,
+      "recall": 0.8666666666666667,
+      "f1-score": 0.91,
+      "support": 105.0
+    },
+    "tulips": {
+      "precision": 0.8363636363636363,
+      "recall": 0.7666666666666667,
+      "f1-score": 0.8,
+      "support": 120.0
+    },
+    "accuracy": 0.8475499092558983,
+    "macro avg": {
+      "precision": 0.8477407152693489,
+      "recall": 0.8449000974658871,
+      "f1-score": 0.8451217344415314,
+      "support": 551.0
+    },
+    "weighted avg": {
+      "precision": 0.8501089163135502,
+      "recall": 0.8475499092558983,
+      "f1-score": 0.8476022422183993,
+      "support": 551.0
+    }
+  },
+  "misclassified": 84
+}
