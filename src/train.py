@@ -482,10 +482,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Train a flower CNN")
     parser.add_argument("--arch", choices=("simple", "residual", "residual_deep",
                                            "residual_se"),
-                        default="simple",
-                        help="simple: plain blocks; residual: same depth with shortcuts; "
-                             "residual_deep: extra residual block in the last two stages; "
-                             "residual_se: SE attention in the last two stages")
+                        default="residual_se",
+                        help="final candidate: residual_se; control: simple")
     parser.add_argument("--data-dir", default="flower_photos")
     parser.add_argument("--splits-dir", default="splits")
     parser.add_argument("--out-dir", default="runs/cnn_baseline")
