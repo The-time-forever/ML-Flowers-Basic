@@ -244,20 +244,26 @@ def write_report(
     lines = []
     a = lines.append
     a("# CNN Baseline 训练报告\n")
-    if args.arch == "residual_deep":
-        model_name = "ResidualCNN (deep)"
-        block_desc = ("6 个 residual block（后两个 stage 各多一个），"
-                      "Global Average Pooling")
-    elif args.arch == "residual_se":
-        model_name = "ResidualCNN + SE"
-        block_desc = ("4 个 residual block（后两个 stage 加 SE，reduction=16），"
-                      "Global Average Pooling")
-    elif args.arch == "residual":
-        model_name = "ResidualCNN"
-        block_desc = "4 个 residual block（shortcut），Global Average Pooling"
-    else:
-        model_name = "SimpleCNN"
-        block_desc = "4 个 conv block，Global Average Pooling"
+    model_info = {
+        "simple": ("SimpleCNN", "4 个 conv block，Global Average Pooling"),
+        "residual": ("ResidualCNN",
+                     "4 个 residual block（shortcut），Global Average Pooling"),
+        "residual_deep": ("ResidualCNN (deep)",
+                          "6 个 residual block（后两个 stage 各多一个），"
+                          "Global Average Pooling"),
+        "residual_se": ("ResidualCNN + SE",
+                        "4 个 residual block（后两个 stage 加 SE，reduction=16），"
+                        "Global Average Pooling"),
+        "mobilenet_v3_small": ("MobileNetV3-Small (pretrained)",
+                               "ImageNet 预训练，全部参数微调"),
+        "efficientnet_v2_m": ("EfficientNetV2-M (pretrained)",
+                              "ImageNet 预训练，全部参数微调"),
+        "convnext_base": ("ConvNeXt-Base (pretrained)",
+                          "ImageNet 预训练，全部参数微调"),
+    }
+    model_name, block_desc = model_info.get(
+        args.arch, (args.arch, "unknown architecture")
+    )
     a(f"- 模型：`{model_name}`（{block_desc}，"
       f"**{params:,}** 可训练参数）")
     aug_bits = [f"RandomResizedCrop({args.crop_scale_min}-{args.crop_scale_max})"]
@@ -481,9 +487,11 @@ def evaluate_and_export(model, loaders, criterion, device, amp, args,
 def main() -> None:
     parser = argparse.ArgumentParser(description="Train a flower CNN")
     parser.add_argument("--arch", choices=("simple", "residual", "residual_deep",
-                                           "residual_se"),
+                                           "residual_se", "mobilenet_v3_small",
+                                           "efficientnet_v2_m", "convnext_base"),
                         default="residual_se",
-                        help="final candidate: residual_se; control: simple")
+                        help="final candidate: residual_se; control: simple; "
+                             "pretrained: mobilenet_v3_small/efficientnet_v2_m/convnext_base")
     parser.add_argument("--data-dir", default="flower_photos")
     parser.add_argument("--splits-dir", default="splits")
     parser.add_argument("--out-dir", default="runs/cnn_baseline")

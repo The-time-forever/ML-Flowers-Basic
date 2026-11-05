@@ -10,6 +10,8 @@ downsampling rhythm (224 -> 112 -> 56 -> 28 -> 14):
   stages, separating the effect of depth from the effect of shortcuts.
 - ``residual_se``: same depth as ``residual``, with squeeze-and-excitation
   channel attention (reduction 16) in the last two stages.
+- ``mobilenet_v3_small`` / ``efficientnet_v2_m`` / ``convnext_base``: cached
+  ImageNet-pretrained backbones with a new 5-class head (transfer learning).
 
 The residual version adds only ~44K parameters and keeps the depth identical,
 which isolates the effect of the shortcut connection.
@@ -19,6 +21,9 @@ from __future__ import annotations
 
 import torch
 from torch import nn
+from torchvision import models as tv_models
+
+PRETRAINED_ARCHS = ("mobilenet_v3_small", "efficientnet_v2_m", "convnext_base")
 
 
 class ConvBlock(nn.Module):
@@ -141,6 +146,28 @@ class ResidualCNN(nn.Module):
         return self.classifier(x)
 
 
+def _build_pretrained(arch: str, num_classes: int) -> nn.Module:
+    """Load cached ImageNet weights and replace the classifier head."""
+    if arch == "mobilenet_v3_small":
+        model = tv_models.mobilenet_v3_small(
+            weights=tv_models.MobileNet_V3_Small_Weights.IMAGENET1K_V1
+        )
+    elif arch == "efficientnet_v2_m":
+        model = tv_models.efficientnet_v2_m(
+            weights=tv_models.EfficientNet_V2_M_Weights.IMAGENET1K_V1
+        )
+    elif arch == "convnext_base":
+        model = tv_models.convnext_base(
+            weights=tv_models.ConvNeXt_Base_Weights.IMAGENET1K_V1
+        )
+    else:
+        raise ValueError(f"unknown pretrained architecture: {arch!r}")
+
+    in_features = model.classifier[-1].in_features
+    model.classifier[-1] = nn.Linear(in_features, num_classes)
+    return model
+
+
 def build_model(arch: str = "simple", num_classes: int = 5,
                 dropout: float = 0.3) -> nn.Module:
     if arch == "simple":
@@ -153,6 +180,8 @@ def build_model(arch: str = "simple", num_classes: int = 5,
     if arch == "residual_se":
         return ResidualCNN(num_classes=num_classes, dropout=dropout,
                            se_last_two=True)
+    if arch in PRETRAINED_ARCHS:
+        return _build_pretrained(arch, num_classes)
     raise ValueError(f"unknown architecture: {arch!r}")
 
 

@@ -1,0 +1,114 @@
+{
+  "config": {
+    "arch": "convnext_base",
+    "data_dir": "flower_photos",
+    "splits_dir": "splits",
+    "out_dir": "runs\\exp_convnext",
+    "reports_dir": "reports\\exp_convnext",
+    "epochs": 5,
+    "batch_size": 32,
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "label_smoothing": 0.1,
+    "image_size": 224,
+    "rotation": 0.0,
+    "crop_scale_min": 0.65,
+    "crop_scale_max": 1.0,
+    "hue": 0.05,
+    "num_workers": 0,
+    "seed": 42,
+    "patience": 5,
+    "no_train_eval": false,
+    "no_amp": false
+  },
+  "parameters": 87571589,
+  "device": "cuda",
+  "best_epoch": 5,
+  "best_val_acc": 0.94918,
+  "test_loss": 0.47409,
+  "test_acc": 0.96733,
+  "test_macro_f1": 0.96651,
+  "confusion_matrix": [
+    [
+      92,
+      0,
+      0,
+      2,
+      1
+    ],
+    [
+      0,
+      134,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      91,
+      0,
+      3
+    ],
+    [
+      0,
+      1,
+      0,
+      104,
+      0
+    ],
+    [
+      2,
+      1,
+      5,
+      0,
+      112
+    ]
+  ],
+  "per_class": {
+    "daisy": {
+      "precision": 0.968421052631579,
+      "recall": 0.968421052631579,
+      "f1-score": 0.968421052631579,
+      "support": 95.0
+    },
+    "dandelion": {
+      "precision": 0.9781021897810219,
+      "recall": 0.9925925925925926,
+      "f1-score": 0.9852941176470589,
+      "support": 135.0
+    },
+    "roses": {
+      "precision": 0.9479166666666666,
+      "recall": 0.9479166666666666,
+      "f1-score": 0.9479166666666666,
+      "support": 96.0
+    },
+    "sunflowers": {
+      "precision": 0.9811320754716981,
+      "recall": 0.9904761904761905,
+      "f1-score": 0.985781990521327,
+      "support": 105.0
+    },
+    "tulips": {
+      "precision": 0.9572649572649573,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.9451476793248945,
+      "support": 120.0
+    },
+    "accuracy": 0.9673321234119783,
+    "macro avg": {
+      "precision": 0.9665673883631847,
+      "recall": 0.9665479671400725,
+      "f1-score": 0.9665123013583052,
+      "support": 551.0
+    },
+    "weighted avg": {
+      "precision": 0.9672131731701654,
+      "recall": 0.9673321234119783,
+      "f1-score": 0.9672223891217415,
+      "support": 551.0
+    }
+  },
+  "misclassified": 18
+}

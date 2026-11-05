@@ -1,0 +1,92 @@
+{
+  "checkpoint": "runs\\exp_convnext\\best.pt",
+  "split": "val",
+  "accuracy": 0.9491833030852994,
+  "errors": 28,
+  "per_class": {
+    "daisy": {
+      "precision": 0.979381443298969,
+      "recall": 1.0,
+      "f1-score": 0.9895833333333334,
+      "support": 95.0
+    },
+    "dandelion": {
+      "precision": 0.9562043795620438,
+      "recall": 0.9703703703703703,
+      "f1-score": 0.9632352941176471,
+      "support": 135.0
+    },
+    "roses": {
+      "precision": 0.9230769230769231,
+      "recall": 0.875,
+      "f1-score": 0.8983957219251337,
+      "support": 96.0
+    },
+    "sunflowers": {
+      "precision": 0.9902912621359223,
+      "recall": 0.9714285714285714,
+      "f1-score": 0.9807692307692307,
+      "support": 105.0
+    },
+    "tulips": {
+      "precision": 0.9024390243902439,
+      "recall": 0.925,
+      "f1-score": 0.9135802469135802,
+      "support": 120.0
+    },
+    "accuracy": 0.9491833030852994,
+    "macro avg": {
+      "precision": 0.9502786064928206,
+      "recall": 0.9483597883597884,
+      "f1-score": 0.949112765411785,
+      "support": 551.0
+    },
+    "weighted avg": {
+      "precision": 0.9492150243571029,
+      "recall": 0.9491833030852994,
+      "f1-score": 0.9490082931719793,
+      "support": 551.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      95,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      131,
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      2,
+      84,
+      0,
+      9
+    ],
+    [
+      0,
+      2,
+      0,
+      102,
+      1
+    ],
+    [
+      0,
+      2,
+      7,
+      0,
+      111
+    ]
+  ],
+  "focus_pairs": {
+    "roses->tulips": 9,
+    "tulips->roses": 7
+  }
+}
