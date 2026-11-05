@@ -1,0 +1,3 @@
+path,label,predicted,confidence,split
+roses/15174615529_144ae28bdb_n.jpg,roses,tulips,0.511,train
+daisy/5700781400_65761f3fce.jpg,daisy,dandelion,0.2824,train

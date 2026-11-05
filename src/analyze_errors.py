@@ -60,11 +60,12 @@ def main() -> None:
     ckpt = torch.load(args.checkpoint, map_location=args.device, weights_only=False)
     cfg = ckpt.get("config", {})
     image_size = int(cfg.get("image_size", 224))
+    resize_size = int(cfg.get("resize_size", 256))
 
     dataset = FlowersDataset(
         Path(args.splits_dir) / f"{args.split}.csv",
         args.data_dir,
-        build_transforms("val", image_size=image_size),
+        build_transforms("val", image_size=image_size, resize_size=resize_size),
     )
     loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False)
 

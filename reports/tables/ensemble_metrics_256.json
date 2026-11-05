@@ -1,0 +1,1235 @@
+{
+  "single": {
+    "convnext_256 (val)": {
+      "accuracy": 0.9600725952813067,
+      "macro_f1": 0.9601982249063298,
+      "per_class": {
+        "daisy": {
+          "precision": 0.9693877551020408,
+          "recall": 1.0,
+          "f1-score": 0.9844559585492227,
+          "support": 95.0
+        },
+        "dandelion": {
+          "precision": 0.9632352941176471,
+          "recall": 0.9703703703703703,
+          "f1-score": 0.966789667896679,
+          "support": 135.0
+        },
+        "roses": {
+          "precision": 0.946236559139785,
+          "recall": 0.9166666666666666,
+          "f1-score": 0.9312169312169312,
+          "support": 96.0
+        },
+        "sunflowers": {
+          "precision": 0.9902912621359223,
+          "recall": 0.9714285714285714,
+          "f1-score": 0.9807692307692307,
+          "support": 105.0
+        },
+        "tulips": {
+          "precision": 0.9338842975206612,
+          "recall": 0.9416666666666667,
+          "f1-score": 0.9377593360995851,
+          "support": 120.0
+        },
+        "accuracy": 0.9600725952813067,
+        "macro avg": {
+          "precision": 0.9606070336032113,
+          "recall": 0.960026455026455,
+          "f1-score": 0.9601982249063298,
+          "support": 551.0
+        },
+        "weighted avg": {
+          "precision": 0.9600980205893769,
+          "recall": 0.9600725952813067,
+          "f1-score": 0.9599793760213657,
+          "support": 551.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          95,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          131,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          88,
+          0,
+          5
+        ],
+        [
+          0,
+          2,
+          0,
+          102,
+          1
+        ],
+        [
+          0,
+          2,
+          5,
+          0,
+          113
+        ]
+      ],
+      "image_size": 256
+    },
+    "convnext_ema224 (val)": {
+      "accuracy": 0.9473684210526315,
+      "macro_f1": 0.9469445575165274,
+      "per_class": {
+        "daisy": {
+          "precision": 0.9693877551020408,
+          "recall": 1.0,
+          "f1-score": 0.9844559585492227,
+          "support": 95.0
+        },
+        "dandelion": {
+          "precision": 0.9632352941176471,
+          "recall": 0.9703703703703703,
+          "f1-score": 0.966789667896679,
+          "support": 135.0
+        },
+        "roses": {
+          "precision": 0.9130434782608695,
+          "recall": 0.875,
+          "f1-score": 0.8936170212765957,
+          "support": 96.0
+        },
+        "sunflowers": {
+          "precision": 0.9902912621359223,
+          "recall": 0.9714285714285714,
+          "f1-score": 0.9807692307692307,
+          "support": 105.0
+        },
+        "tulips": {
+          "precision": 0.9016393442622951,
+          "recall": 0.9166666666666666,
+          "f1-score": 0.9090909090909091,
+          "support": 120.0
+        },
+        "accuracy": 0.9473684210526315,
+        "macro avg": {
+          "precision": 0.947519426775755,
+          "recall": 0.9466931216931217,
+          "f1-score": 0.9469445575165274,
+          "support": 551.0
+        },
+        "weighted avg": {
+          "precision": 0.9472923397266187,
+          "recall": 0.9473684210526315,
+          "f1-score": 0.9471848159572763,
+          "support": 551.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          95,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          131,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          84,
+          0,
+          9
+        ],
+        [
+          0,
+          2,
+          0,
+          102,
+          1
+        ],
+        [
+          0,
+          2,
+          8,
+          0,
+          110
+        ]
+      ],
+      "image_size": 224
+    },
+    "convnext_raw224 (val)": {
+      "accuracy": 0.956442831215971,
+      "macro_f1": 0.9563359160233066,
+      "per_class": {
+        "daisy": {
+          "precision": 0.979381443298969,
+          "recall": 1.0,
+          "f1-score": 0.9895833333333334,
+          "support": 95.0
+        },
+        "dandelion": {
+          "precision": 0.9632352941176471,
+          "recall": 0.9703703703703703,
+          "f1-score": 0.966789667896679,
+          "support": 135.0
+        },
+        "roses": {
+          "precision": 0.9347826086956522,
+          "recall": 0.8958333333333334,
+          "f1-score": 0.9148936170212766,
+          "support": 96.0
+        },
+        "sunflowers": {
+          "precision": 0.9809523809523809,
+          "recall": 0.9809523809523809,
+          "f1-score": 0.9809523809523809,
+          "support": 105.0
+        },
+        "tulips": {
+          "precision": 0.9256198347107438,
+          "recall": 0.9333333333333333,
+          "f1-score": 0.9294605809128631,
+          "support": 120.0
+        },
+        "accuracy": 0.956442831215971,
+        "macro avg": {
+          "precision": 0.9567943123550787,
+          "recall": 0.9560978835978837,
+          "f1-score": 0.9563359160233066,
+          "support": 551.0
+        },
+        "weighted avg": {
+          "precision": 0.9562459390550931,
+          "recall": 0.956442831215971,
+          "f1-score": 0.9562469669261425,
+          "support": 551.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          95,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          131,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          86,
+          0,
+          7
+        ],
+        [
+          0,
+          2,
+          0,
+          103,
+          0
+        ],
+        [
+          0,
+          1,
+          6,
+          1,
+          112
+        ]
+      ],
+      "image_size": 224
+    },
+    "efficientnet_ema224 (val)": {
+      "accuracy": 0.9382940108892922,
+      "macro_f1": 0.936843136096025,
+      "per_class": {
+        "daisy": {
+          "precision": 0.9574468085106383,
+          "recall": 0.9473684210526315,
+          "f1-score": 0.9523809523809523,
+          "support": 95.0
+        },
+        "dandelion": {
+          "precision": 0.9772727272727273,
+          "recall": 0.9555555555555556,
+          "f1-score": 0.9662921348314607,
+          "support": 135.0
+        },
+        "roses": {
+          "precision": 0.8686868686868687,
+          "recall": 0.8958333333333334,
+          "f1-score": 0.882051282051282,
+          "support": 96.0
+        },
+        "sunflowers": {
+          "precision": 0.9622641509433962,
+          "recall": 0.9714285714285714,
+          "f1-score": 0.966824644549763,
+          "support": 105.0
+        },
+        "tulips": {
+          "precision": 0.9166666666666666,
+          "recall": 0.9166666666666666,
+          "f1-score": 0.9166666666666666,
+          "support": 120.0
+        },
+        "accuracy": 0.9382940108892922,
+        "macro avg": {
+          "precision": 0.9364674444160593,
+          "recall": 0.9373705096073518,
+          "f1-score": 0.936843136096025,
+          "support": 551.0
+        },
+        "weighted avg": {
+          "precision": 0.9388764795523136,
+          "recall": 0.9382940108892922,
+          "f1-score": 0.9385102349057819,
+          "support": 551.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          90,
+          1,
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          129,
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          86,
+          0,
+          7
+        ],
+        [
+          0,
+          1,
+          1,
+          102,
+          1
+        ],
+        [
+          0,
+          0,
+          9,
+          1,
+          110
+        ]
+      ],
+      "image_size": 224
+    },
+    "efficientnet_raw224 (val)": {
+      "accuracy": 0.9401088929219601,
+      "macro_f1": 0.9388486227123598,
+      "per_class": {
+        "daisy": {
+          "precision": 0.9473684210526315,
+          "recall": 0.9473684210526315,
+          "f1-score": 0.9473684210526315,
+          "support": 95.0
+        },
+        "dandelion": {
+          "precision": 0.9770992366412213,
+          "recall": 0.9481481481481482,
+          "f1-score": 0.9624060150375939,
+          "support": 135.0
+        },
+        "roses": {
+          "precision": 0.8958333333333334,
+          "recall": 0.8958333333333334,
+          "f1-score": 0.8958333333333334,
+          "support": 96.0
+        },
+        "sunflowers": {
+          "precision": 0.9622641509433962,
+          "recall": 0.9714285714285714,
+          "f1-score": 0.966824644549763,
+          "support": 105.0
+        },
+        "tulips": {
+          "precision": 0.9105691056910569,
+          "recall": 0.9333333333333333,
+          "f1-score": 0.9218106995884774,
+          "support": 120.0
+        },
+        "accuracy": 0.9401088929219601,
+        "macro avg": {
+          "precision": 0.9386268495323279,
+          "recall": 0.9392223614592036,
+          "f1-score": 0.9388486227123598,
+          "support": 551.0
+        },
+        "weighted avg": {
+          "precision": 0.9404980498703237,
+          "recall": 0.9401088929219601,
+          "f1-score": 0.9402153968392333,
+          "support": 551.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          90,
+          1,
+          2,
+          1,
+          1
+        ],
+        [
+          4,
+          128,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          86,
+          0,
+          8
+        ],
+        [
+          0,
+          1,
+          1,
+          102,
+          1
+        ],
+        [
+          0,
+          0,
+          7,
+          1,
+          112
+        ]
+      ],
+      "image_size": 224
+    },
+    "convnext_256 (test)": {
+      "accuracy": 0.9673321234119783,
+      "macro_f1": 0.9669484838974778,
+      "per_class": {
+        "daisy": {
+          "precision": 0.9787234042553191,
+          "recall": 0.968421052631579,
+          "f1-score": 0.9735449735449735,
+          "support": 95.0
+        },
+        "dandelion": {
+          "precision": 0.9779411764705882,
+          "recall": 0.9851851851851852,
+          "f1-score": 0.981549815498155,
+          "support": 135.0
+        },
+        "roses": {
+          "precision": 0.9484536082474226,
+          "recall": 0.9583333333333334,
+          "f1-score": 0.9533678756476683,
+          "support": 96.0
+        },
+        "sunflowers": {
+          "precision": 0.9719626168224299,
+          "recall": 0.9904761904761905,
+          "f1-score": 0.9811320754716981,
+          "support": 105.0
+        },
+        "tulips": {
+          "precision": 0.9572649572649573,
+          "recall": 0.9333333333333333,
+          "f1-score": 0.9451476793248945,
+          "support": 120.0
+        },
+        "accuracy": 0.9673321234119783,
+        "macro avg": {
+          "precision": 0.9668691526121436,
+          "recall": 0.9671498189919243,
+          "f1-score": 0.9669484838974778,
+          "support": 551.0
+        },
+        "weighted avg": {
+          "precision": 0.9672961855856395,
+          "recall": 0.9673321234119783,
+          "f1-score": 0.9672520927127318,
+          "support": 551.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          92,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          133,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          92,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          104,
+          0
+        ],
+        [
+          2,
+          1,
+          5,
+          0,
+          112
+        ]
+      ],
+      "image_size": 256
+    },
+    "convnext_ema224 (test)": {
+      "accuracy": 0.969147005444646,
+      "macro_f1": 0.9683366731408263,
+      "per_class": {
+        "daisy": {
+          "precision": 0.9787234042553191,
+          "recall": 0.968421052631579,
+          "f1-score": 0.9735449735449735,
+          "support": 95.0
+        },
+        "dandelion": {
+          "precision": 0.9852941176470589,
+          "recall": 0.9925925925925926,
+          "f1-score": 0.988929889298893,
+          "support": 135.0
+        },
+        "roses": {
+          "precision": 0.9574468085106383,
+          "recall": 0.9375,
+          "f1-score": 0.9473684210526315,
+          "support": 96.0
+        },
+        "sunflowers": {
+          "precision": 0.9811320754716981,
+          "recall": 0.9904761904761905,
+          "f1-score": 0.985781990521327,
+          "support": 105.0
+        },
+        "tulips": {
+          "precision": 0.9421487603305785,
+          "recall": 0.95,
+          "f1-score": 0.946058091286307,
+          "support": 120.0
+        },
+        "accuracy": 0.969147005444646,
+        "macro avg": {
+          "precision": 0.9689490332430586,
+          "recall": 0.9677979671400724,
+          "f1-score": 0.9683366731408263,
+          "support": 551.0
+        },
+        "weighted avg": {
+          "precision": 0.9691198585623,
+          "recall": 0.969147005444646,
+          "f1-score": 0.9690993755395133,
+          "support": 551.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          92,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          134,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          90,
+          0,
+          5
+        ],
+        [
+          0,
+          1,
+          0,
+          104,
+          0
+        ],
+        [
+          2,
+          0,
+          4,
+          0,
+          114
+        ]
+      ],
+      "image_size": 224
+    },
+    "convnext_raw224 (test)": {
+      "accuracy": 0.9673321234119783,
+      "macro_f1": 0.9666498714501002,
+      "per_class": {
+        "daisy": {
+          "precision": 0.968421052631579,
+          "recall": 0.968421052631579,
+          "f1-score": 0.968421052631579,
+          "support": 95.0
+        },
+        "dandelion": {
+          "precision": 0.9779411764705882,
+          "recall": 0.9851851851851852,
+          "f1-score": 0.981549815498155,
+          "support": 135.0
+        },
+        "roses": {
+          "precision": 0.9479166666666666,
+          "recall": 0.9479166666666666,
+          "f1-score": 0.9479166666666666,
+          "support": 96.0
+        },
+        "sunflowers": {
+          "precision": 0.9811320754716981,
+          "recall": 0.9904761904761905,
+          "f1-score": 0.985781990521327,
+          "support": 105.0
+        },
+        "tulips": {
+          "precision": 0.9576271186440678,
+          "recall": 0.9416666666666667,
+          "f1-score": 0.9495798319327731,
+          "support": 120.0
+        },
+        "accuracy": 0.9673321234119783,
+        "macro avg": {
+          "precision": 0.9666076179769199,
+          "recall": 0.9667331523252576,
+          "f1-score": 0.9666498714501002,
+          "support": 551.0
+        },
+        "weighted avg": {
+          "precision": 0.9672525970695931,
+          "recall": 0.9673321234119783,
+          "f1-score": 0.9672702612140163,
+          "support": 551.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          92,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          133,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          91,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          104,
+          0
+        ],
+        [
+          2,
+          1,
+          4,
+          0,
+          113
+        ]
+      ],
+      "image_size": 224
+    },
+    "efficientnet_ema224 (test)": {
+      "accuracy": 0.9673321234119783,
+      "macro_f1": 0.9669054348096203,
+      "per_class": {
+        "daisy": {
+          "precision": 0.9680851063829787,
+          "recall": 0.9578947368421052,
+          "f1-score": 0.9629629629629629,
+          "support": 95.0
+        },
+        "dandelion": {
+          "precision": 0.9850746268656716,
+          "recall": 0.9777777777777777,
+          "f1-score": 0.9814126394052045,
+          "support": 135.0
+        },
+        "roses": {
+          "precision": 0.9489795918367347,
+          "recall": 0.96875,
+          "f1-score": 0.9587628865979382,
+          "support": 96.0
+        },
+        "sunflowers": {
+          "precision": 0.9811320754716981,
+          "recall": 0.9904761904761905,
+          "f1-score": 0.985781990521327,
+          "support": 105.0
+        },
+        "tulips": {
+          "precision": 0.9495798319327731,
+          "recall": 0.9416666666666667,
+          "f1-score": 0.9456066945606695,
+          "support": 120.0
+        },
+        "accuracy": 0.9673321234119783,
+        "macro avg": {
+          "precision": 0.9665702464979713,
+          "recall": 0.967313074352548,
+          "f1-score": 0.9669054348096203,
+          "support": 551.0
+        },
+        "weighted avg": {
+          "precision": 0.9673750422977063,
+          "recall": 0.9673321234119783,
+          "f1-score": 0.9673200313368527,
+          "support": 551.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          91,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          132,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          93,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          104,
+          0
+        ],
+        [
+          1,
+          1,
+          5,
+          0,
+          113
+        ]
+      ],
+      "image_size": 224
+    },
+    "efficientnet_raw224 (test)": {
+      "accuracy": 0.9673321234119783,
+      "macro_f1": 0.9670728203351334,
+      "per_class": {
+        "daisy": {
+          "precision": 0.9787234042553191,
+          "recall": 0.968421052631579,
+          "f1-score": 0.9735449735449735,
+          "support": 95.0
+        },
+        "dandelion": {
+          "precision": 0.9640287769784173,
+          "recall": 0.9925925925925926,
+          "f1-score": 0.9781021897810219,
+          "support": 135.0
+        },
+        "roses": {
+          "precision": 0.9484536082474226,
+          "recall": 0.9583333333333334,
+          "f1-score": 0.9533678756476683,
+          "support": 96.0
+        },
+        "sunflowers": {
+          "precision": 0.9902912621359223,
+          "recall": 0.9714285714285714,
+          "f1-score": 0.9807692307692307,
+          "support": 105.0
+        },
+        "tulips": {
+          "precision": 0.9576271186440678,
+          "recall": 0.9416666666666667,
+          "f1-score": 0.9495798319327731,
+          "support": 120.0
+        },
+        "accuracy": 0.9673321234119783,
+        "macro avg": {
+          "precision": 0.9678248340522299,
+          "recall": 0.9664884433305486,
+          "f1-score": 0.9670728203351334,
+          "support": 551.0
+        },
+        "weighted avg": {
+          "precision": 0.9674591496363959,
+          "recall": 0.9673321234119783,
+          "f1-score": 0.9673035085881826,
+          "support": 551.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          92,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          134,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          92,
+          0,
+          4
+        ],
+        [
+          0,
+          3,
+          0,
+          102,
+          0
+        ],
+        [
+          1,
+          1,
+          5,
+          0,
+          113
+        ]
+      ],
+      "image_size": 224
+    }
+  },
+  "combos": [
+    {
+      "members": [
+        "convnext_256",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9637023593466425,
+      "val_f1": 0.9634004833025198
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_ema224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9618874773139746,
+      "val_f1": 0.9617399587861912
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_raw224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9618874773139746,
+      "val_f1": 0.9616909436148596
+    },
+    {
+      "members": [
+        "convnext_256"
+      ],
+      "val_acc": 0.9600725952813067,
+      "val_f1": 0.9601982249063298
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_raw224",
+        "efficientnet_ema224"
+      ],
+      "val_acc": 0.9600725952813067,
+      "val_f1": 0.9597733037336905
+    },
+    {
+      "members": [
+        "convnext_raw224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9600725952813067,
+      "val_f1": 0.9595883626820232
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_ema224"
+      ],
+      "val_acc": 0.9582577132486388,
+      "val_f1": 0.9582862139258822
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_ema224",
+        "efficientnet_ema224"
+      ],
+      "val_acc": 0.9582577132486388,
+      "val_f1": 0.9580229555688812
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_ema224",
+        "convnext_raw224",
+        "efficientnet_ema224"
+      ],
+      "val_acc": 0.9582577132486388,
+      "val_f1": 0.9580229555688812
+    },
+    {
+      "members": [
+        "convnext_ema224",
+        "convnext_raw224",
+        "efficientnet_ema224"
+      ],
+      "val_acc": 0.9582577132486388,
+      "val_f1": 0.9576327898421656
+    },
+    {
+      "members": [
+        "convnext_ema224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9582577132486388,
+      "val_f1": 0.9574840116996555
+    },
+    {
+      "members": [
+        "convnext_ema224",
+        "convnext_raw224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9582577132486388,
+      "val_f1": 0.9574023461391278
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_raw224"
+      ],
+      "val_acc": 0.956442831215971,
+      "val_f1": 0.9566830213480539
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_ema224",
+        "convnext_raw224"
+      ],
+      "val_acc": 0.956442831215971,
+      "val_f1": 0.9566830213480539
+    },
+    {
+      "members": [
+        "convnext_raw224"
+      ],
+      "val_acc": 0.956442831215971,
+      "val_f1": 0.9563359160233066
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_ema224",
+        "convnext_raw224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.956442831215971,
+      "val_f1": 0.9561060657946949
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_ema224",
+        "convnext_raw224",
+        "efficientnet_ema224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.956442831215971,
+      "val_f1": 0.9557036192046346
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_ema224",
+        "efficientnet_ema224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9546279491833031,
+      "val_f1": 0.9538958882927403
+    },
+    {
+      "members": [
+        "convnext_256",
+        "convnext_raw224",
+        "efficientnet_ema224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9546279491833031,
+      "val_f1": 0.9536786428397288
+    },
+    {
+      "members": [
+        "convnext_ema224",
+        "convnext_raw224",
+        "efficientnet_ema224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9546279491833031,
+      "val_f1": 0.9536786428397288
+    },
+    {
+      "members": [
+        "convnext_ema224",
+        "convnext_raw224"
+      ],
+      "val_acc": 0.9528130671506352,
+      "val_f1": 0.9529605187998526
+    },
+    {
+      "members": [
+        "convnext_256",
+        "efficientnet_ema224"
+      ],
+      "val_acc": 0.9509981851179673,
+      "val_f1": 0.9505244086570865
+    },
+    {
+      "members": [
+        "convnext_ema224",
+        "efficientnet_ema224"
+      ],
+      "val_acc": 0.9509981851179673,
+      "val_f1": 0.949821748492894
+    },
+    {
+      "members": [
+        "convnext_raw224",
+        "efficientnet_ema224"
+      ],
+      "val_acc": 0.9509981851179673,
+      "val_f1": 0.949821748492894
+    },
+    {
+      "members": [
+        "convnext_ema224"
+      ],
+      "val_acc": 0.9473684210526315,
+      "val_f1": 0.9469445575165274
+    },
+    {
+      "members": [
+        "convnext_256",
+        "efficientnet_ema224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.941923774954628,
+      "val_f1": 0.940943277755189
+    },
+    {
+      "members": [
+        "convnext_raw224",
+        "efficientnet_ema224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9401088929219601,
+      "val_f1": 0.939027338520386
+    },
+    {
+      "members": [
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9401088929219601,
+      "val_f1": 0.9388486227123598
+    },
+    {
+      "members": [
+        "convnext_ema224",
+        "efficientnet_ema224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9382940108892922,
+      "val_f1": 0.9371052269403213
+    },
+    {
+      "members": [
+        "efficientnet_ema224"
+      ],
+      "val_acc": 0.9382940108892922,
+      "val_f1": 0.936843136096025
+    },
+    {
+      "members": [
+        "efficientnet_ema224",
+        "efficientnet_raw224"
+      ],
+      "val_acc": 0.9364791288566243,
+      "val_f1": 0.935300667131912
+    }
+  ],
+  "best": {
+    "members": [
+      "convnext_256",
+      "efficientnet_raw224"
+    ],
+    "val_acc": 0.9637023593466425,
+    "test": {
+      "accuracy": 0.9745916515426497,
+      "macro_f1": 0.9742457312159953,
+      "per_class": {
+        "daisy": {
+          "precision": 0.9789473684210527,
+          "recall": 0.9789473684210527,
+          "f1-score": 0.9789473684210527,
+          "support": 95.0
+        },
+        "dandelion": {
+          "precision": 0.9852941176470589,
+          "recall": 0.9925925925925926,
+          "f1-score": 0.988929889298893,
+          "support": 135.0
+        },
+        "roses": {
+          "precision": 0.9587628865979382,
+          "recall": 0.96875,
+          "f1-score": 0.9637305699481865,
+          "support": 96.0
+        },
+        "sunflowers": {
+          "precision": 0.9903846153846154,
+          "recall": 0.9809523809523809,
+          "f1-score": 0.9856459330143541,
+          "support": 105.0
+        },
+        "tulips": {
+          "precision": 0.957983193277311,
+          "recall": 0.95,
+          "f1-score": 0.9539748953974896,
+          "support": 120.0
+        },
+        "accuracy": 0.9745916515426497,
+        "macro avg": {
+          "precision": 0.9742744362655952,
+          "recall": 0.9742484683932053,
+          "f1-score": 0.9742457312159953,
+          "support": 551.0
+        },
+        "weighted avg": {
+          "precision": 0.9745994751441324,
+          "recall": 0.9745916515426497,
+          "f1-score": 0.974579818846792,
+          "support": 551.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          93,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          134,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          93,
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          0,
+          103,
+          0
+        ],
+        [
+          2,
+          0,
+          4,
+          0,
+          114
+        ]
+      ]
+    }
+  }
+}

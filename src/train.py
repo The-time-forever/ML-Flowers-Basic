@@ -297,7 +297,8 @@ def write_report(
     if args.rotation > 0:
         aug_bits.append(f"RandomRotation(±{args.rotation:g}°)")
     aug_bits += ["水平翻转", f"ColorJitter(hue={args.hue})"]
-    a(f"- 输入：{args.image_size}×{args.image_size}，ImageNet 归一化；"
+    a(f"- 输入：{args.image_size}×{args.image_size}（验证 Resize({args.resize_size}) "
+      f"→ CenterCrop({args.image_size})），ImageNet 归一化；"
       f"训练增强：" + "、".join(aug_bits))
     a(f"- 优化：AdamW lr={args.lr}, weight_decay={args.weight_decay}, "
       f"cosine schedule, label smoothing={args.label_smoothing}, AMP={not args.no_amp}"
@@ -545,6 +546,8 @@ def main() -> None:
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--label-smoothing", type=float, default=0.1)
     parser.add_argument("--image-size", type=int, default=224)
+    parser.add_argument("--resize-size", type=int, default=256,
+                        help="validation resize before center crop; use 288 for 256 input")
     parser.add_argument("--rotation", type=float, default=0.0,
                         help="random rotation degrees (0 disables)")
     parser.add_argument("--crop-scale-min", type=float, default=0.65)
@@ -563,6 +566,8 @@ def main() -> None:
                         help="skip the clean train-set evaluation each epoch")
     parser.add_argument("--eval-only", action="store_true",
                         help="skip training and re-evaluate the saved best.pt")
+    parser.add_argument("--init-from", default=None,
+                        help="initialize model weights from a checkpoint before training")
     parser.add_argument("--no-amp", action="store_true")
     args = parser.parse_args()
 
@@ -599,6 +604,7 @@ def main() -> None:
         batch_size=args.batch_size,
         num_workers=args.num_workers,
         image_size=args.image_size,
+        resize_size=args.resize_size,
         rotation=args.rotation,
         crop_scale=(args.crop_scale_min, args.crop_scale_max),
         hue=args.hue,
@@ -614,11 +620,22 @@ def main() -> None:
             batch_size=args.batch_size,
             num_workers=args.num_workers,
             image_size=args.image_size,
+            resize_size=args.resize_size,
         )
         print(f"  clean train eval: {len(train_eval_loader.dataset)} images "
               "(val transforms, no augmentation)")
 
     model = build_model(args.arch, num_classes=len(CLASSES)).to(device)
+    if args.init_from and not args.eval_only:
+        init_ckpt = torch.load(args.init_from, map_location=device,
+                               weights_only=False)
+        init_arch = init_ckpt.get("config", {}).get("arch")
+        if init_arch is not None and init_arch != args.arch:
+            raise ValueError(
+                f"--init-from arch mismatch: {init_arch} vs --arch {args.arch}"
+            )
+        model.load_state_dict(init_ckpt["model"])
+        print(f"initialized weights from {args.init_from}")
     params = count_parameters(model)
     print(f"model: {type(model).__name__} ({params:,} parameters)")
 

@@ -35,12 +35,14 @@ except ImportError:
 
 def load_checkpoint(path: str | Path, device: torch.device):
     ckpt = torch.load(path, map_location=device, weights_only=False)
-    arch = ckpt.get("config", {}).get("arch", "simple")
-    image_size = int(ckpt.get("config", {}).get("image_size", 224))
+    cfg = ckpt.get("config", {})
+    arch = cfg.get("arch", "simple")
+    image_size = int(cfg.get("image_size", 224))
+    resize_size = int(cfg.get("resize_size", 256))
     model = build_model(arch, num_classes=len(CLASSES)).to(device)
     model.load_state_dict(ckpt["model"])
     model.eval()
-    return model, arch, image_size
+    return model, arch, image_size, resize_size
 
 
 @torch.inference_mode()
@@ -103,6 +105,8 @@ def main() -> None:
     parser.add_argument("--out-dir", default="reports")
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--no-tta", action="store_true")
+    parser.add_argument("--suffix", default="",
+                        help="suffix for output filenames, e.g. _256")
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = parser.parse_args()
 
@@ -113,37 +117,43 @@ def main() -> None:
     device = torch.device(args.device)
     amp = device.type == "cuda"
 
-    models, image_sizes = [], set()
-    for path in args.checkpoints:
-        model, arch, image_size = load_checkpoint(path, device)
-        models.append(model)
-        image_sizes.add(image_size)
-        print(f"loaded {path} ({arch}, {image_size}px)")
-    if len(image_sizes) != 1:
-        parser.error(f"checkpoints use different image sizes: {sorted(image_sizes)}")
-    image_size = image_sizes.pop()
+    specs = []
+    for i, path in enumerate(args.checkpoints):
+        model, arch, image_size, resize_size = load_checkpoint(path, device)
+        specs.append((names[i], model, image_size, resize_size))
+        print(f"loaded {path} ({arch}, {image_size}px, resize {resize_size})")
 
-    loaders = {}
-    for split in ("val", "test"):
-        ds = FlowersDataset(
-            Path(args.splits_dir) / f"{split}.csv",
-            args.data_dir,
-            build_transforms("val", image_size=image_size),
-        )
-        loaders[split] = DataLoader(ds, batch_size=args.batch_size, shuffle=False)
+    loader_cache = {}
+    def get_loader(split: str, image_size: int, resize_size: int) -> DataLoader:
+        key = (split, image_size, resize_size)
+        if key not in loader_cache:
+            ds = FlowersDataset(
+                Path(args.splits_dir) / f"{split}.csv",
+                args.data_dir,
+                build_transforms("val", image_size=image_size,
+                                 resize_size=resize_size),
+            )
+            loader_cache[key] = DataLoader(
+                ds, batch_size=args.batch_size, shuffle=False
+            )
+        return loader_cache[key]
 
     single, probs_by_split, labels_by_split = {}, {}, {}
     for split in ("val", "test"):
         probs_by_split[split] = []
-        for name, model in zip(names, models):
-            probs, labels = infer(model, loaders[split], device, amp,
+        for name, model, image_size, resize_size in specs:
+            loader = get_loader(split, image_size, resize_size)
+            probs, labels = infer(model, loader, device, amp,
                                   tta=not args.no_tta)
             probs_by_split[split].append(probs)
-            labels_by_split[split] = labels
+            if split not in labels_by_split:
+                labels_by_split[split] = labels
+            elif not np.array_equal(labels_by_split[split], labels):
+                raise RuntimeError("label order differs between splits")
             m = score(probs, labels)
-            single[f"{name} ({split})"] = m
-            print(f"{name:<18} {split:<4} acc={m['accuracy']:.4f} "
-                  f"f1={m['macro_f1']:.4f}")
+            single[f"{name} ({split})"] = {**m, "image_size": image_size}
+            print(f"{name:<18} {split:<4} {image_size}px "
+                  f"acc={m['accuracy']:.4f} f1={m['macro_f1']:.4f}")
 
     # equal-weight subsets, selected on validation accuracy
     combos = []
@@ -171,19 +181,20 @@ def main() -> None:
     fig_dir.mkdir(parents=True, exist_ok=True)
     table_dir.mkdir(parents=True, exist_ok=True)
     plot_confusion(np.array(test_m["confusion_matrix"]),
-                   fig_dir / "14_ensemble_confusion.png",
+                   fig_dir / f"14_ensemble_confusion{args.suffix}.png",
                    f"Ensemble: {'+'.join(best['members'])} (test)")
 
     lines = ["# 迁移模型集成结果\n"]
-    lines.append(f"- 输入尺寸：{image_size}；TTA：{'off' if args.no_tta else 'horizontal flip'}")
+    lines.append(f"- 各模型使用自身训练分辨率（见下表）；"
+                 f"TTA：{'off' if args.no_tta else 'horizontal flip'}")
     lines.append(f"- 集成方式：等权概率平均；组合在 val 上选择\n")
     lines.append("## 单模型\n")
-    lines.append("| 模型 | split | acc | macro F1 |")
-    lines.append("|---|---|---:|---:|")
+    lines.append("| 模型 | split | input | acc | macro F1 |")
+    lines.append("|---|---|---:|---:|---:|")
     for key, m in single.items():
         name, split = key.rsplit(" (", 1)
-        lines.append(f"| {name} | {split[:-1]} | {m['accuracy']:.4f} | "
-                     f"{m['macro_f1']:.4f} |")
+        lines.append(f"| {name} | {split[:-1]} | {m['image_size']} | "
+                     f"{m['accuracy']:.4f} | {m['macro_f1']:.4f} |")
 
     lines.append("\n## 集成组合（按 val 排序，前 10）\n")
     lines.append("| 组合 | val acc | val F1 | test acc | test F1 |")
@@ -205,10 +216,13 @@ def main() -> None:
     lines.append(f"\n- val acc = {best['val_acc']:.4f}")
     lines.append(f"- test acc = **{test_m['accuracy']:.4f}**")
     lines.append(f"- test macro F1 = **{test_m['macro_f1']:.4f}**")
-    lines.append("\n![ensemble confusion](figures/14_ensemble_confusion.png)\n")
+    lines.append("\n![ensemble confusion](figures/14_ensemble_confusion"
+                 f"{args.suffix}.png)\n")
 
-    (out_dir / "ensemble_report.md").write_text("\n".join(lines), encoding="utf-8")
-    (table_dir / "ensemble_metrics.json").write_text(
+    (out_dir / f"ensemble_report{args.suffix}.md").write_text(
+        "\n".join(lines), encoding="utf-8"
+    )
+    (table_dir / f"ensemble_metrics{args.suffix}.json").write_text(
         json.dumps({
             "single": single,
             "combos": [
@@ -221,7 +235,7 @@ def main() -> None:
         }, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    print(f"wrote {out_dir / 'ensemble_report.md'}")
+    print(f"wrote {out_dir / f'ensemble_report{args.suffix}.md'}")
 
 
 if __name__ == "__main__":

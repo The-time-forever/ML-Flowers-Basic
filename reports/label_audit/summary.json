@@ -1,0 +1,17 @@
+{
+  "train": {
+    "images": 2564,
+    "errors": 2,
+    "suspicious_written": 2
+  },
+  "val": {
+    "images": 551,
+    "errors": 22,
+    "suspicious_written": 22
+  },
+  "test": {
+    "images": 551,
+    "errors": 18,
+    "suspicious_written": 18
+  }
+}
