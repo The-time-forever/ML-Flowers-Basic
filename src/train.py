@@ -246,8 +246,12 @@ def write_report(
     a("# CNN Baseline 训练报告\n")
     a(f"- 模型：`SimpleCNN`（4 个 conv block，Global Average Pooling，"
       f"**{params:,}** 可训练参数）")
-    a(f"- 输入：224×224，ImageNet 归一化；训练增强：RandomResizedCrop(0.65-1.0)、"
-      f"水平翻转、ColorJitter")
+    aug_bits = [f"RandomResizedCrop({args.crop_scale_min}-{args.crop_scale_max})"]
+    if args.rotation > 0:
+        aug_bits.append(f"RandomRotation(±{args.rotation:g}°)")
+    aug_bits += ["水平翻转", f"ColorJitter(hue={args.hue})"]
+    a(f"- 输入：{args.image_size}×{args.image_size}，ImageNet 归一化；"
+      f"训练增强：" + "、".join(aug_bits))
     a(f"- 优化：AdamW lr={args.lr}, weight_decay={args.weight_decay}, "
       f"cosine schedule, label smoothing={args.label_smoothing}, AMP={not args.no_amp}")
     a(f"- 训练：{args.epochs} epochs（early stopping patience={args.patience}），"
@@ -472,6 +476,12 @@ def main() -> None:
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--label-smoothing", type=float, default=0.1)
     parser.add_argument("--image-size", type=int, default=224)
+    parser.add_argument("--rotation", type=float, default=0.0,
+                        help="random rotation degrees (0 disables)")
+    parser.add_argument("--crop-scale-min", type=float, default=0.65)
+    parser.add_argument("--crop-scale-max", type=float, default=1.0)
+    parser.add_argument("--hue", type=float, default=0.05,
+                        help="ColorJitter hue range (0 keeps colour intact)")
     parser.add_argument("--num-workers", type=int, default=0,
                         help="DataLoader workers; 0 is fastest on Windows for this dataset")
     parser.add_argument("--seed", type=int, default=42)
@@ -482,6 +492,9 @@ def main() -> None:
                         help="skip training and re-evaluate the saved best.pt")
     parser.add_argument("--no-amp", action="store_true")
     args = parser.parse_args()
+
+    if args.crop_scale_min <= 0 or args.crop_scale_max < args.crop_scale_min:
+        parser.error("--crop-scale-min must be > 0 and <= --crop-scale-max")
 
     seed_everything(args.seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -502,6 +515,9 @@ def main() -> None:
         batch_size=args.batch_size,
         num_workers=args.num_workers,
         image_size=args.image_size,
+        rotation=args.rotation,
+        crop_scale=(args.crop_scale_min, args.crop_scale_max),
+        hue=args.hue,
     )
     for split, loader in loaders.items():
         print(f"  {split:<5} {len(loader.dataset):>5} images, {len(loader):>3} batches")

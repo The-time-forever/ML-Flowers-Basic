@@ -1,0 +1,113 @@
+{
+  "config": {
+    "data_dir": "flower_photos",
+    "splits_dir": "splits",
+    "out_dir": "runs\\exp_hue0",
+    "reports_dir": "reports\\exp_hue0",
+    "epochs": 80,
+    "batch_size": 32,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "label_smoothing": 0.1,
+    "image_size": 224,
+    "rotation": 0.0,
+    "crop_scale_min": 0.65,
+    "crop_scale_max": 1.0,
+    "hue": 0.0,
+    "num_workers": 0,
+    "seed": 42,
+    "patience": 15,
+    "no_train_eval": false,
+    "no_amp": false
+  },
+  "parameters": 1174501,
+  "device": "cuda",
+  "best_epoch": 69,
+  "best_val_acc": 0.8784,
+  "test_loss": 0.7199,
+  "test_acc": 0.85662,
+  "test_macro_f1": 0.85253,
+  "confusion_matrix": [
+    [
+      82,
+      4,
+      2,
+      3,
+      4
+    ],
+    [
+      2,
+      126,
+      1,
+      6,
+      0
+    ],
+    [
+      3,
+      4,
+      73,
+      3,
+      13
+    ],
+    [
+      1,
+      6,
+      0,
+      98,
+      0
+    ],
+    [
+      4,
+      1,
+      21,
+      1,
+      93
+    ]
+  ],
+  "per_class": {
+    "daisy": {
+      "precision": 0.8913043478260869,
+      "recall": 0.8631578947368421,
+      "f1-score": 0.8770053475935828,
+      "support": 95.0
+    },
+    "dandelion": {
+      "precision": 0.8936170212765957,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.9130434782608695,
+      "support": 135.0
+    },
+    "roses": {
+      "precision": 0.7525773195876289,
+      "recall": 0.7604166666666666,
+      "f1-score": 0.7564766839378239,
+      "support": 96.0
+    },
+    "sunflowers": {
+      "precision": 0.8828828828828829,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.9074074074074074,
+      "support": 105.0
+    },
+    "tulips": {
+      "precision": 0.8454545454545455,
+      "recall": 0.775,
+      "f1-score": 0.808695652173913,
+      "support": 120.0
+    },
+    "accuracy": 0.8566243194192378,
+    "macro avg": {
+      "precision": 0.853167223405548,
+      "recall": 0.8530482456140351,
+      "f1-score": 0.8525257138747193,
+      "support": 551.0
+    },
+    "weighted avg": {
+      "precision": 0.8561104932005067,
+      "recall": 0.8566243194192378,
+      "f1-score": 0.8557520785540583,
+      "support": 551.0
+    }
+  },
+  "misclassified": 79
+}

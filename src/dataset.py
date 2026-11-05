@@ -33,20 +33,33 @@ def build_transforms(
     split: str,
     image_size: int = 224,
     resize_size: int = 256,
+    rotation: float = 0.0,
+    crop_scale: tuple[float, float] = (0.65, 1.0),
+    hue: float = 0.05,
 ) -> v2.Compose:
     """Return the transform pipeline for ``train`` / ``val`` / ``test``."""
     if split == "train":
-        return v2.Compose([
+        ops: list = []
+        if rotation > 0:
+            ops.append(
+                v2.RandomRotation(
+                    degrees=rotation,
+                    interpolation=v2.InterpolationMode.BILINEAR,
+                    fill=128,
+                )
+            )
+        ops += [
             # random scale + aspect jitter, then crop to the network input size
             v2.RandomResizedCrop(
-                image_size, scale=(0.65, 1.0), ratio=(0.8, 1.25), antialias=True
+                image_size, scale=crop_scale, ratio=(0.8, 1.25), antialias=True
             ),
             v2.RandomHorizontalFlip(p=0.5),
-            v2.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.05),
+            v2.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=hue),
             v2.ToImage(),
             v2.ToDtype(torch.float32, scale=True),
             v2.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD),
-        ])
+        ]
+        return v2.Compose(ops)
     if split in ("val", "test"):
         return v2.Compose([
             # resize the shorter side to 256, then take the central 224x224
@@ -110,6 +123,9 @@ def build_dataloaders(
     num_workers: int = 0,
     image_size: int = 224,
     resize_size: int = 256,
+    rotation: float = 0.0,
+    crop_scale: tuple[float, float] = (0.65, 1.0),
+    hue: float = 0.05,
 ) -> dict[str, DataLoader]:
     """Create train/val/test loaders from the CSV manifests."""
     splits_dir = Path(splits_dir)
@@ -118,7 +134,14 @@ def build_dataloaders(
         dataset = FlowersDataset(
             splits_dir / f"{split}.csv",
             data_dir,
-            build_transforms(split, image_size=image_size, resize_size=resize_size),
+            build_transforms(
+                split,
+                image_size=image_size,
+                resize_size=resize_size,
+                rotation=rotation,
+                crop_scale=crop_scale,
+                hue=hue,
+            ),
         )
         loaders[split] = DataLoader(
             dataset,
