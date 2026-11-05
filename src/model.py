@@ -1,9 +1,16 @@
-"""A compact from-scratch CNN baseline for flower classification.
+"""Compact from-scratch CNNs for flower classification.
 
-Architecture: 4 convolutional blocks (2x conv-BN-ReLU + max-pool each),
-global average pooling, dropout and a linear classifier. It is deliberately
-small (~1.2M parameters) so it trains quickly on a single GPU and serves as a
-reference point for pretrained models later.
+Two variants share the same channel schedule (32 -> 64 -> 128 -> 256) and
+downsampling rhythm (224 -> 112 -> 56 -> 28 -> 14):
+
+- ``SimpleCNN``: 4 plain blocks, each ``Conv-BN-ReLU-Conv-BN-ReLU-MaxPool``.
+- ``ResidualCNN``: the same 4 blocks with a shortcut connection; a 1x1
+  conv + BN projects the identity when channels change.
+- ``residual_deep``: adds one extra residual block to each of the last two
+  stages, separating the effect of depth from the effect of shortcuts.
+
+The residual version adds only ~44K parameters and keeps the depth identical,
+which isolates the effect of the shortcut connection.
 """
 
 from __future__ import annotations
@@ -31,6 +38,35 @@ class ConvBlock(nn.Module):
         return self.block(x)
 
 
+class ResidualBlock(nn.Module):
+    """Pre-activation-free basic residual block: conv-BN-ReLU-conv-BN + shortcut."""
+
+    def __init__(self, in_channels: int, out_channels: int):
+        super().__init__()
+        self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size=3,
+                               padding=1, bias=False)
+        self.bn1 = nn.BatchNorm2d(out_channels)
+        self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3,
+                               padding=1, bias=False)
+        self.bn2 = nn.BatchNorm2d(out_channels)
+        if in_channels == out_channels:
+            self.shortcut = nn.Identity()
+        else:
+            self.shortcut = nn.Sequential(
+                nn.Conv2d(in_channels, out_channels, kernel_size=1, bias=False),
+                nn.BatchNorm2d(out_channels),
+            )
+        self.relu = nn.ReLU(inplace=True)
+        self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        identity = self.shortcut(x)
+        out = self.relu(self.bn1(self.conv1(x)))
+        out = self.bn2(self.conv2(out))
+        out = self.relu(out + identity)
+        return self.pool(out)
+
+
 class SimpleCNN(nn.Module):
     def __init__(self, num_classes: int = 5, dropout: float = 0.3):
         super().__init__()
@@ -53,12 +89,54 @@ class SimpleCNN(nn.Module):
         return self.classifier(x)
 
 
+class ResidualCNN(nn.Module):
+    def __init__(self, num_classes: int = 5, dropout: float = 0.3,
+                 extra_blocks: bool = False):
+        super().__init__()
+        blocks = [
+            ResidualBlock(3, 32),     # 224 -> 112
+            ResidualBlock(32, 64),    # 112 -> 56
+            ResidualBlock(64, 128),   # 56  -> 28
+        ]
+        if extra_blocks:
+            blocks.append(ResidualBlock(128, 128))  # extra block, stage 3
+        blocks.append(ResidualBlock(128, 256))      # 28 -> 14
+        if extra_blocks:
+            blocks.append(ResidualBlock(256, 256))  # extra block, stage 4
+        self.features = nn.Sequential(*blocks)
+        self.pool = nn.AdaptiveAvgPool2d(1)
+        self.classifier = nn.Sequential(
+            nn.Flatten(),
+            nn.Dropout(dropout),
+            nn.Linear(256, num_classes),
+        )
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        x = self.features(x)
+        x = self.pool(x)
+        return self.classifier(x)
+
+
+def build_model(arch: str = "simple", num_classes: int = 5,
+                dropout: float = 0.3) -> nn.Module:
+    if arch == "simple":
+        return SimpleCNN(num_classes=num_classes, dropout=dropout)
+    if arch == "residual":
+        return ResidualCNN(num_classes=num_classes, dropout=dropout)
+    if arch == "residual_deep":
+        return ResidualCNN(num_classes=num_classes, dropout=dropout,
+                           extra_blocks=True)
+    raise ValueError(f"unknown architecture: {arch!r}")
+
+
 def count_parameters(model: nn.Module) -> int:
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 
 if __name__ == "__main__":
-    model = SimpleCNN()
-    print(model)
-    print(f"parameters: {count_parameters(model):,}")
-    print(f"output shape: {model(torch.zeros(2, 3, 224, 224)).shape}")
+    x = torch.zeros(2, 3, 224, 224)
+    for name in ("simple", "residual", "residual_deep"):
+        model = build_model(name)
+        print(f"\n{name}: {count_parameters(model):,} parameters, "
+              f"output {tuple(model(x).shape)}")
+        print(model)

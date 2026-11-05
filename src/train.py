@@ -40,7 +40,7 @@ try:  # `python src/train.py`
         build_eval_loader,
         denormalize,
     )
-    from model import SimpleCNN, count_parameters
+    from model import build_model, count_parameters
 except ImportError:  # `python -m src.train`
     from .dataset import (
         CLASSES,
@@ -50,7 +50,7 @@ except ImportError:  # `python -m src.train`
         build_eval_loader,
         denormalize,
     )
-    from .model import SimpleCNN, count_parameters
+    from .model import build_model, count_parameters
 
 
 # --------------------------------------------------------------------------- #
@@ -244,7 +244,17 @@ def write_report(
     lines = []
     a = lines.append
     a("# CNN Baseline 训练报告\n")
-    a(f"- 模型：`SimpleCNN`（4 个 conv block，Global Average Pooling，"
+    if args.arch == "residual_deep":
+        model_name = "ResidualCNN (deep)"
+        block_desc = ("6 个 residual block（后两个 stage 各多一个），"
+                      "Global Average Pooling")
+    elif args.arch == "residual":
+        model_name = "ResidualCNN"
+        block_desc = "4 个 residual block（shortcut），Global Average Pooling"
+    else:
+        model_name = "SimpleCNN"
+        block_desc = "4 个 conv block，Global Average Pooling"
+    a(f"- 模型：`{model_name}`（{block_desc}，"
       f"**{params:,}** 可训练参数）")
     aug_bits = [f"RandomResizedCrop({args.crop_scale_min}-{args.crop_scale_max})"]
     if args.rotation > 0:
@@ -465,7 +475,11 @@ def evaluate_and_export(model, loaders, criterion, device, amp, args,
 # Main
 # --------------------------------------------------------------------------- #
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Train SimpleCNN baseline")
+    parser = argparse.ArgumentParser(description="Train a flower CNN")
+    parser.add_argument("--arch", choices=("simple", "residual", "residual_deep"),
+                        default="simple",
+                        help="simple: plain blocks; residual: same depth with shortcuts; "
+                             "residual_deep: extra residual block in the last two stages")
     parser.add_argument("--data-dir", default="flower_photos")
     parser.add_argument("--splits-dir", default="splits")
     parser.add_argument("--out-dir", default="runs/cnn_baseline")
@@ -509,6 +523,17 @@ def main() -> None:
     fig_dir.mkdir(parents=True, exist_ok=True)
     table_dir.mkdir(parents=True, exist_ok=True)
 
+    checkpoint = None
+    if args.eval_only:
+        checkpoint = torch.load(out_dir / "best.pt", map_location=device,
+                                weights_only=False)
+        # restore the config that produced the checkpoint, not CLI defaults
+        for key, value in checkpoint.get("config", {}).items():
+            if key not in ("out_dir", "reports_dir", "eval_only", "data_dir",
+                           "splits_dir", "num_workers"):
+                setattr(args, key, value)
+        print(f"eval-only: arch={args.arch}, epochs={args.epochs}")
+
     loaders = build_dataloaders(
         data_dir=args.data_dir,
         splits_dir=args.splits_dir,
@@ -534,9 +559,9 @@ def main() -> None:
         print(f"  clean train eval: {len(train_eval_loader.dataset)} images "
               "(val transforms, no augmentation)")
 
-    model = SimpleCNN(num_classes=len(CLASSES)).to(device)
+    model = build_model(args.arch, num_classes=len(CLASSES)).to(device)
     params = count_parameters(model)
-    print(f"model: SimpleCNN ({params:,} parameters)")
+    print(f"model: {type(model).__name__} ({params:,} parameters)")
 
     criterion = nn.CrossEntropyLoss(label_smoothing=args.label_smoothing)
     optimizer = torch.optim.AdamW(
@@ -553,15 +578,8 @@ def main() -> None:
 
     if args.eval_only:
         history = read_history(out_dir / "history.csv")
-        checkpoint = torch.load(out_dir / "best.pt", map_location=device,
-                                weights_only=False)
         best_epoch = int(checkpoint["epoch"])
         best_acc = float(checkpoint["val_acc"])
-        # report the config that produced the checkpoint, not eval-only defaults
-        for key, value in checkpoint.get("config", {}).items():
-            if key not in ("out_dir", "reports_dir", "eval_only", "data_dir",
-                           "splits_dir", "num_workers"):
-                setattr(args, key, value)
         print(f"eval-only: best epoch {best_epoch}, val acc {best_acc:.4f}")
     else:
         history, best_epoch, best_acc = train_model(

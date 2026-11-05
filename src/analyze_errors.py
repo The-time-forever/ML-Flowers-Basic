@@ -28,7 +28,7 @@ try:
         build_transforms,
         denormalize,
     )
-    from model import SimpleCNN
+    from model import build_model
 except ImportError:
     from .dataset import (
         CLASSES,
@@ -36,7 +36,7 @@ except ImportError:
         build_transforms,
         denormalize,
     )
-    from .model import SimpleCNN
+    from .model import build_model
 
 
 def main() -> None:
@@ -69,7 +69,7 @@ def main() -> None:
     loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False)
 
     device = torch.device(args.device)
-    model = SimpleCNN(num_classes=len(CLASSES)).to(device)
+    model = build_model(cfg.get("arch", "simple"), num_classes=len(CLASSES)).to(device)
     model.load_state_dict(ckpt["model"])
     model.eval()
 

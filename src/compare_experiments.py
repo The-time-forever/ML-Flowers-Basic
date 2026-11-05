@@ -74,6 +74,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Compare experiment metrics")
     parser.add_argument("reports_dirs", nargs="+")
     parser.add_argument("--out-dir", default="reports")
+    parser.add_argument("--suffix", default="",
+                        help="suffix for output filenames, e.g. _residual")
     args = parser.parse_args()
 
     runs = [load_run(Path(d)) for d in args.reports_dirs]
@@ -104,7 +106,9 @@ def main() -> None:
 
     out_dir = Path(args.out_dir)
     (out_dir / "figures").mkdir(parents=True, exist_ok=True)
-    (out_dir / "experiments_comparison.md").write_text("\n".join(lines), encoding="utf-8")
+    (out_dir / f"experiments_comparison{args.suffix}.md").write_text(
+        "\n".join(lines), encoding="utf-8"
+    )
 
     fig, axes = plt.subplots(1, 2, figsize=(13, 4.6))
     x = np.arange(len(runs))
@@ -135,13 +139,13 @@ def main() -> None:
     ax.spines[["top", "right"]].set_visible(False)
 
     fig.tight_layout()
-    fig.savefig(out_dir / "figures" / "13_experiment_comparison.png",
+    fig.savefig(out_dir / "figures" / f"13_experiment_comparison{args.suffix}.png",
                 dpi=150, bbox_inches="tight")
     plt.close(fig)
 
     print("\n".join(lines))
-    print(f"wrote {out_dir / 'experiments_comparison.md'}")
-    print(f"wrote {out_dir / 'figures' / '13_experiment_comparison.png'}")
+    print(f"wrote {out_dir / f'experiments_comparison{args.suffix}.md'}")
+    print(f"wrote {out_dir / 'figures' / f'13_experiment_comparison{args.suffix}.png'}")
 
 
 if __name__ == "__main__":
