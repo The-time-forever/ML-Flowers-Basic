@@ -1,0 +1,116 @@
+{
+  "config": {
+    "arch": "efficientnet_v2_m",
+    "data_dir": "flower_photos",
+    "splits_dir": "splits",
+    "out_dir": "runs\\exp_eff_ema",
+    "reports_dir": "reports\\exp_eff_ema",
+    "epochs": 10,
+    "batch_size": 32,
+    "lr": 5e-05,
+    "weight_decay": 0.01,
+    "label_smoothing": 0.1,
+    "image_size": 224,
+    "rotation": 0.0,
+    "crop_scale_min": 0.65,
+    "crop_scale_max": 1.0,
+    "hue": 0.05,
+    "num_workers": 0,
+    "seed": 42,
+    "patience": 5,
+    "ema_decay": 0.995,
+    "tta": true,
+    "no_train_eval": false,
+    "no_amp": false
+  },
+  "parameters": 52864761,
+  "device": "cuda",
+  "best_epoch": 10,
+  "best_val_acc": 0.94011,
+  "test_loss": 0.47102,
+  "test_acc": 0.96733,
+  "test_macro_f1": 0.96691,
+  "confusion_matrix": [
+    [
+      91,
+      0,
+      0,
+      1,
+      3
+    ],
+    [
+      2,
+      132,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      93,
+      0,
+      3
+    ],
+    [
+      0,
+      1,
+      0,
+      104,
+      0
+    ],
+    [
+      1,
+      1,
+      5,
+      0,
+      113
+    ]
+  ],
+  "per_class": {
+    "daisy": {
+      "precision": 0.9680851063829787,
+      "recall": 0.9578947368421052,
+      "f1-score": 0.9629629629629629,
+      "support": 95.0
+    },
+    "dandelion": {
+      "precision": 0.9850746268656716,
+      "recall": 0.9777777777777777,
+      "f1-score": 0.9814126394052045,
+      "support": 135.0
+    },
+    "roses": {
+      "precision": 0.9489795918367347,
+      "recall": 0.96875,
+      "f1-score": 0.9587628865979382,
+      "support": 96.0
+    },
+    "sunflowers": {
+      "precision": 0.9811320754716981,
+      "recall": 0.9904761904761905,
+      "f1-score": 0.985781990521327,
+      "support": 105.0
+    },
+    "tulips": {
+      "precision": 0.9495798319327731,
+      "recall": 0.9416666666666667,
+      "f1-score": 0.9456066945606695,
+      "support": 120.0
+    },
+    "accuracy": 0.9673321234119783,
+    "macro avg": {
+      "precision": 0.9665702464979713,
+      "recall": 0.967313074352548,
+      "f1-score": 0.9669054348096203,
+      "support": 551.0
+    },
+    "weighted avg": {
+      "precision": 0.9673750422977063,
+      "recall": 0.9673321234119783,
+      "f1-score": 0.9673200313368527,
+      "support": 551.0
+    }
+  },
+  "misclassified": 18
+}

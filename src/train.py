@@ -16,6 +16,7 @@ Artefacts:
 from __future__ import annotations
 
 import argparse
+import copy
 import csv
 import json
 import random
@@ -56,6 +57,26 @@ except ImportError:  # `python -m src.train`
 # --------------------------------------------------------------------------- #
 # Utilities
 # --------------------------------------------------------------------------- #
+class ModelEMA:
+    """Exponential moving average of model weights and buffers."""
+
+    def __init__(self, model: nn.Module, decay: float = 0.998):
+        self.decay = decay
+        self.ema = copy.deepcopy(model).eval()
+        for param in self.ema.parameters():
+            param.requires_grad_(False)
+
+    @torch.no_grad()
+    def update(self, model: nn.Module) -> None:
+        d = self.decay
+        for ema_v, model_v in zip(self.ema.state_dict().values(),
+                                  model.state_dict().values()):
+            if ema_v.dtype.is_floating_point:
+                ema_v.mul_(d).add_(model_v.detach(), alpha=1.0 - d)
+            else:
+                ema_v.copy_(model_v)
+
+
 def seed_everything(seed: int) -> None:
     random.seed(seed)
     np.random.seed(seed)
@@ -72,13 +93,15 @@ def run_epoch(
     optimizer: torch.optim.Optimizer | None = None,
     scaler=None,
     amp: bool = False,
+    ema: ModelEMA | None = None,
+    hflip: bool = False,
 ):
     """One pass over ``loader``; training when ``optimizer`` is given."""
     training = optimizer is not None
     model.train(training)
 
     total_loss = 0.0
-    correct = 0
+    correct = 0.0
     total = 0
     all_preds: list[torch.Tensor] = []
     all_labels: list[torch.Tensor] = []
@@ -87,6 +110,8 @@ def run_epoch(
     for images, labels in loader:
         images = images.to(device, non_blocking=True)
         labels = labels.to(device, non_blocking=True)
+        if hflip:
+            images = torch.flip(images, dims=[3])
 
         with torch.set_grad_enabled(training):
             with torch.amp.autocast(
@@ -107,6 +132,8 @@ def run_epoch(
                     loss.backward()
                     torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=5.0)
                     optimizer.step()
+                if ema is not None:
+                    ema.update(model)
 
         batch = labels.size(0)
         total_loss += loss.item() * batch
@@ -273,7 +300,9 @@ def write_report(
     a(f"- 输入：{args.image_size}×{args.image_size}，ImageNet 归一化；"
       f"训练增强：" + "、".join(aug_bits))
     a(f"- 优化：AdamW lr={args.lr}, weight_decay={args.weight_decay}, "
-      f"cosine schedule, label smoothing={args.label_smoothing}, AMP={not args.no_amp}")
+      f"cosine schedule, label smoothing={args.label_smoothing}, AMP={not args.no_amp}"
+      + (f", EMA decay={args.ema_decay}" if args.ema_decay > 0 else "")
+      + (", test TTA=horizontal flip" if args.tta else ""))
     a(f"- 训练：{args.epochs} epochs（early stopping patience={args.patience}），"
       f"batch size={args.batch_size}，seed={args.seed}")
     a("- 诊断指标：每轮训练后用**验证预处理**（无增强、dropout off）再评估一次训练集，"
@@ -354,20 +383,26 @@ def train_model(model, loaders, criterion, optimizer, scheduler, scaler,
     best_loss = float("inf")
     best_epoch = 0
     epochs_without_improvement = 0
+    ema = None
 
     for epoch in range(1, args.epochs + 1):
         t0 = time.time()
         train_loss, train_acc, _, _, _ = run_epoch(
             model, loaders["train"], criterion, device,
-            optimizer=optimizer, scaler=scaler, amp=amp,
+            optimizer=optimizer, scaler=scaler, amp=amp, ema=ema,
         )
+        # start EMA after one epoch so the new classifier head is not averaged
+        # against its random initialisation on short fine-tuning schedules
+        if args.ema_decay > 0 and ema is None:
+            ema = ModelEMA(model, args.ema_decay)
+        eval_model = ema.ema if ema is not None else model
         val_loss, val_acc, _, _, _ = run_epoch(
-            model, loaders["val"], criterion, device, amp=amp,
+            eval_model, loaders["val"], criterion, device, amp=amp,
         )
         clean_loss = clean_acc = None
         if train_eval_loader is not None:
             clean_loss, clean_acc, _, _, _ = run_epoch(
-                model, train_eval_loader, criterion, device, amp=amp,
+                eval_model, train_eval_loader, criterion, device, amp=amp,
             )
         scheduler.step()
         elapsed = time.time() - t0
@@ -393,7 +428,7 @@ def train_model(model, loaders, criterion, optimizer, scheduler, scaler,
             best_acc, best_loss, best_epoch = val_acc, val_loss, epoch
             epochs_without_improvement = 0
             torch.save({
-                "model": model.state_dict(),
+                "model": eval_model.state_dict(),
                 "epoch": epoch,
                 "val_acc": val_acc,
                 "val_loss": val_loss,
@@ -417,7 +452,7 @@ def train_model(model, loaders, criterion, optimizer, scheduler, scaler,
             break
 
     torch.save({
-        "model": model.state_dict(),
+        "model": (ema.ema if ema is not None else model).state_dict(),
         "epoch": history[-1]["epoch"],
         "config": vars(args),
         "classes": CLASSES,
@@ -440,6 +475,14 @@ def evaluate_and_export(model, loaders, criterion, device, amp, args,
     test_loss, test_acc, preds, labels, probs = run_epoch(
         model, loaders["test"], criterion, device, amp=amp,
     )
+    if args.tta:
+        _, _, _, _, probs_flip = run_epoch(
+            model, loaders["test"], criterion, device, amp=amp, hflip=True,
+        )
+        probs = (probs + probs_flip) / 2.0
+        preds = probs.argmax(axis=1)
+        test_acc = float((preds == labels).mean())
+        print("applied horizontal-flip TTA")
     report_dict = classification_report(
         labels, preds, labels=list(range(len(CLASSES))),
         target_names=CLASSES, output_dict=True, zero_division=0,
@@ -512,6 +555,10 @@ def main() -> None:
                         help="DataLoader workers; 0 is fastest on Windows for this dataset")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--patience", type=int, default=8)
+    parser.add_argument("--ema-decay", type=float, default=0.0,
+                        help="Model EMA decay (e.g. 0.998); 0 disables EMA")
+    parser.add_argument("--tta", action="store_true",
+                        help="horizontal-flip test-time augmentation")
     parser.add_argument("--no-train-eval", action="store_true",
                         help="skip the clean train-set evaluation each epoch")
     parser.add_argument("--eval-only", action="store_true",
