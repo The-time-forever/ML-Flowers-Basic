@@ -248,6 +248,10 @@ def write_report(
         model_name = "ResidualCNN (deep)"
         block_desc = ("6 个 residual block（后两个 stage 各多一个），"
                       "Global Average Pooling")
+    elif args.arch == "residual_se":
+        model_name = "ResidualCNN + SE"
+        block_desc = ("4 个 residual block（后两个 stage 加 SE，reduction=16），"
+                      "Global Average Pooling")
     elif args.arch == "residual":
         model_name = "ResidualCNN"
         block_desc = "4 个 residual block（shortcut），Global Average Pooling"
@@ -476,10 +480,12 @@ def evaluate_and_export(model, loaders, criterion, device, amp, args,
 # --------------------------------------------------------------------------- #
 def main() -> None:
     parser = argparse.ArgumentParser(description="Train a flower CNN")
-    parser.add_argument("--arch", choices=("simple", "residual", "residual_deep"),
+    parser.add_argument("--arch", choices=("simple", "residual", "residual_deep",
+                                           "residual_se"),
                         default="simple",
                         help="simple: plain blocks; residual: same depth with shortcuts; "
-                             "residual_deep: extra residual block in the last two stages")
+                             "residual_deep: extra residual block in the last two stages; "
+                             "residual_se: SE attention in the last two stages")
     parser.add_argument("--data-dir", default="flower_photos")
     parser.add_argument("--splits-dir", default="splits")
     parser.add_argument("--out-dir", default="runs/cnn_baseline")

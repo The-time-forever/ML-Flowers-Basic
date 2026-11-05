@@ -8,6 +8,8 @@ downsampling rhythm (224 -> 112 -> 56 -> 28 -> 14):
   conv + BN projects the identity when channels change.
 - ``residual_deep``: adds one extra residual block to each of the last two
   stages, separating the effect of depth from the effect of shortcuts.
+- ``residual_se``: same depth as ``residual``, with squeeze-and-excitation
+  channel attention (reduction 16) in the last two stages.
 
 The residual version adds only ~44K parameters and keeps the depth identical,
 which isolates the effect of the shortcut connection.
@@ -38,10 +40,29 @@ class ConvBlock(nn.Module):
         return self.block(x)
 
 
-class ResidualBlock(nn.Module):
-    """Pre-activation-free basic residual block: conv-BN-ReLU-conv-BN + shortcut."""
+class SEBlock(nn.Module):
+    """Squeeze-and-Excitation channel attention (reduction=16 by default)."""
 
-    def __init__(self, in_channels: int, out_channels: int):
+    def __init__(self, channels: int, reduction: int = 16):
+        super().__init__()
+        hidden = max(1, channels // reduction)
+        self.pool = nn.AdaptiveAvgPool2d(1)
+        self.fc1 = nn.Conv2d(channels, hidden, kernel_size=1)
+        self.fc2 = nn.Conv2d(hidden, channels, kernel_size=1)
+        self.relu = nn.ReLU(inplace=True)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        scale = self.pool(x)
+        scale = self.relu(self.fc1(scale))
+        scale = torch.sigmoid(self.fc2(scale))
+        return x * scale
+
+
+class ResidualBlock(nn.Module):
+    """Basic residual block: conv-BN-ReLU-conv-BN-(SE)-shortcut."""
+
+    def __init__(self, in_channels: int, out_channels: int,
+                 se: bool = False, se_reduction: int = 16):
         super().__init__()
         self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size=3,
                                padding=1, bias=False)
@@ -49,6 +70,8 @@ class ResidualBlock(nn.Module):
         self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3,
                                padding=1, bias=False)
         self.bn2 = nn.BatchNorm2d(out_channels)
+        self.se = (SEBlock(out_channels, reduction=se_reduction)
+                   if se else nn.Identity())
         if in_channels == out_channels:
             self.shortcut = nn.Identity()
         else:
@@ -63,6 +86,7 @@ class ResidualBlock(nn.Module):
         identity = self.shortcut(x)
         out = self.relu(self.bn1(self.conv1(x)))
         out = self.bn2(self.conv2(out))
+        out = self.se(out)
         out = self.relu(out + identity)
         return self.pool(out)
 
@@ -91,16 +115,16 @@ class SimpleCNN(nn.Module):
 
 class ResidualCNN(nn.Module):
     def __init__(self, num_classes: int = 5, dropout: float = 0.3,
-                 extra_blocks: bool = False):
+                 extra_blocks: bool = False, se_last_two: bool = False):
         super().__init__()
         blocks = [
-            ResidualBlock(3, 32),     # 224 -> 112
-            ResidualBlock(32, 64),    # 112 -> 56
-            ResidualBlock(64, 128),   # 56  -> 28
+            ResidualBlock(3, 32),                            # 224 -> 112
+            ResidualBlock(32, 64),                           # 112 -> 56
+            ResidualBlock(64, 128, se=se_last_two),          # 56  -> 28
         ]
         if extra_blocks:
             blocks.append(ResidualBlock(128, 128))  # extra block, stage 3
-        blocks.append(ResidualBlock(128, 256))      # 28 -> 14
+        blocks.append(ResidualBlock(128, 256, se=se_last_two))  # 28 -> 14
         if extra_blocks:
             blocks.append(ResidualBlock(256, 256))  # extra block, stage 4
         self.features = nn.Sequential(*blocks)
@@ -126,6 +150,9 @@ def build_model(arch: str = "simple", num_classes: int = 5,
     if arch == "residual_deep":
         return ResidualCNN(num_classes=num_classes, dropout=dropout,
                            extra_blocks=True)
+    if arch == "residual_se":
+        return ResidualCNN(num_classes=num_classes, dropout=dropout,
+                           se_last_two=True)
     raise ValueError(f"unknown architecture: {arch!r}")
 
 
@@ -135,7 +162,7 @@ def count_parameters(model: nn.Module) -> int:
 
 if __name__ == "__main__":
     x = torch.zeros(2, 3, 224, 224)
-    for name in ("simple", "residual", "residual_deep"):
+    for name in ("simple", "residual", "residual_deep", "residual_se"):
         model = build_model(name)
         print(f"\n{name}: {count_parameters(model):,} parameters, "
               f"output {tuple(model(x).shape)}")
