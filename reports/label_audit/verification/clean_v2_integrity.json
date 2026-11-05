@@ -1,0 +1,26 @@
+{
+  "train": {
+    "original": 2564,
+    "clean": 2531,
+    "excluded": 33,
+    "exact_filter_match": true
+  },
+  "val": {
+    "original": 551,
+    "clean": 540,
+    "excluded": 11,
+    "exact_filter_match": true
+  },
+  "test": {
+    "original": 551,
+    "clean": 545,
+    "excluded": 6,
+    "exact_filter_match": true
+  },
+  "total": 3616,
+  "source_images_and_manifests_unchanged": true,
+  "original_files_hashed": 3673,
+  "cross_split_clusters": 0,
+  "decisions_applied": true,
+  "rebuild_identical": true
+}

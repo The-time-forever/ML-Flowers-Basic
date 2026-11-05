@@ -1,0 +1,68 @@
+{
+  "version": "clean-v3",
+  "policy": "Exclude confirmed irrelevant images, clearly mismatched target classes and non-photographic depictions; retain target plants including seed heads and identifiable vegetative parts, and mixed scenes with visible targets. Retain uncertain flower authenticity conservatively with evidence.",
+  "decisions_file": "reports/label_audit/cleaning_list.csv",
+  "decisions_sha256": "b9a54c6ef16afcb4e3cab44e82a217ff467ebc97dde893b9058c5ed1491f582b",
+  "decision_counts": {
+    "exclude": 57,
+    "keep": 7
+  },
+  "before": {
+    "train": 2564,
+    "val": 551,
+    "test": 551
+  },
+  "after": {
+    "train": 2527,
+    "val": 538,
+    "test": 544
+  },
+  "excluded": {
+    "train": 37,
+    "val": 13,
+    "test": 7
+  },
+  "cross_split_clusters": 0,
+  "classes_before_train": {
+    "daisy": 443,
+    "dandelion": 628,
+    "roses": 448,
+    "sunflowers": 487,
+    "tulips": 558
+  },
+  "classes_after_train": {
+    "daisy": 442,
+    "dandelion": 628,
+    "roses": 427,
+    "sunflowers": 485,
+    "tulips": 545
+  },
+  "classes_before_val": {
+    "daisy": 95,
+    "dandelion": 135,
+    "roses": 96,
+    "sunflowers": 105,
+    "tulips": 120
+  },
+  "classes_after_val": {
+    "daisy": 95,
+    "dandelion": 135,
+    "roses": 89,
+    "sunflowers": 105,
+    "tulips": 114
+  },
+  "classes_before_test": {
+    "daisy": 95,
+    "dandelion": 135,
+    "roses": 96,
+    "sunflowers": 105,
+    "tulips": 120
+  },
+  "classes_after_test": {
+    "daisy": 95,
+    "dandelion": 135,
+    "roses": 95,
+    "sunflowers": 104,
+    "tulips": 115
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "train": {
+    "before": 2564,
+    "after": 2529,
+    "exact_filter_match": true
+  },
+  "val": {
+    "before": 551,
+    "after": 547,
+    "exact_filter_match": true
+  },
+  "test": {
+    "before": 551,
+    "after": 548,
+    "exact_filter_match": true
+  },
+  "unique_paths": true,
+  "files_exist": true,
+  "cross_split_clusters": 0
+}

@@ -1,0 +1,13 @@
+{
+  "train": 2527,
+  "val": 538,
+  "test": 544,
+  "total": 3609,
+  "excluded": 57,
+  "remaining10_excluded": 7,
+  "remaining10_kept": 3,
+  "pending_actions": 0,
+  "source_images_and_splits_unchanged": true,
+  "cross_split_clusters": 0,
+  "rebuild_identical": true
+}

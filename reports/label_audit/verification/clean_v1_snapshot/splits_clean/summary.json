@@ -1,0 +1,60 @@
+{
+  "policy": "exclude only images with no flower of any kind; keep species-doubtful flowers",
+  "before": {
+    "train": 2564,
+    "val": 551,
+    "test": 551
+  },
+  "after": {
+    "train": 2529,
+    "val": 547,
+    "test": 548
+  },
+  "excluded": {
+    "train": 35,
+    "val": 4,
+    "test": 3
+  },
+  "classes_before_train": {
+    "daisy": 443,
+    "dandelion": 628,
+    "roses": 448,
+    "sunflowers": 487,
+    "tulips": 558
+  },
+  "classes_after_train": {
+    "daisy": 441,
+    "dandelion": 626,
+    "roses": 432,
+    "sunflowers": 484,
+    "tulips": 546
+  },
+  "classes_before_val": {
+    "daisy": 95,
+    "dandelion": 135,
+    "roses": 96,
+    "sunflowers": 105,
+    "tulips": 120
+  },
+  "classes_after_val": {
+    "daisy": 95,
+    "dandelion": 135,
+    "roses": 92,
+    "sunflowers": 105,
+    "tulips": 120
+  },
+  "classes_before_test": {
+    "daisy": 95,
+    "dandelion": 135,
+    "roses": 96,
+    "sunflowers": 105,
+    "tulips": 120
+  },
+  "classes_after_test": {
+    "daisy": 95,
+    "dandelion": 135,
+    "roses": 95,
+    "sunflowers": 105,
+    "tulips": 118
+  }
+}

@@ -1,0 +1,1810 @@
+[
+  {
+    "split": "train",
+    "path": "daisy/20580471306_ab5a011b15_n.jpg",
+    "top1": "long-horned beetle",
+    "prob1": "0.4552",
+    "nonflower_flag": "True",
+    "top5": "long-horned beetle(0.46) | daisy(0.04) | ground beetle(0.04) | weevil(0.02) | tiger beetle(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "daisy/2635314490_e12d3b0f36_m.jpg",
+    "top1": "barn spider",
+    "prob1": "0.5779",
+    "nonflower_flag": "True",
+    "top5": "barn spider(0.58) | daisy(0.05) | garden spider(0.01) | wolf spider(0.01) | fly(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "daisy/8740807508_0587f5b7b7.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4173",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.42) | daisy(0.22) | leaf beetle(0.02) | bee(0.01) | fly(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/10683189_bd6e371b97.jpg",
+    "top1": "cardoon",
+    "prob1": "0.542",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.54) | ladybug(0.11) | coral fungus(0.02) | bee(0.02) | goldfinch(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/10828951106_c3cd47983f.jpg",
+    "top1": "ladybug",
+    "prob1": "0.3603",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.36) | parachute(0.28) | sea anemone(0.08) | balloon(0.01) | ant(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/11124381625_24b17662bd_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.403",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.40) | goldfinch(0.08) | cabbage butterfly(0.03) | bee(0.02) | lycaenid(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/11465213433_847c4fa261.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5451",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.55) | ladybug(0.02) | bee(0.01) | artichoke(0.01) | ringlet(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/13651218133_b6eb8e7ed2_m.jpg",
+    "top1": "mobile home",
+    "prob1": "0.3861",
+    "nonflower_flag": "True",
+    "top5": "mobile home(0.39) | boathouse(0.03) | bow(0.03) | sundial(0.02) | worm fence(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/138132145_782763b84f_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3977",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.40) | earthstar(0.01) | black stork(0.01) | golf ball(0.01) | worm fence(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/13900486390_5a25785645_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6141",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.61) | bee(0.02) | ringlet(0.01) | cabbage butterfly(0.01) | ladybug(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/13916196427_50a611008f.jpg",
+    "top1": "cardoon",
+    "prob1": "0.588",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.59) | artichoke(0.03) | spider web(0.02) | daisy(0.01) | bee(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14003401241_543535b385.jpg",
+    "top1": "cardoon",
+    "prob1": "0.7097",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.71) | mushroom(0.02) | hay(0.01) | artichoke(0.01) | golf ball(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14012247974_69ac128799.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4694",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.47) | goldfinch(0.04) | cardoon(0.03) | bee(0.02) | porcupine(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14084345111_8a4cb05a31.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6419",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.64) | ant(0.03) | bee(0.01) | artichoke(0.01) | daisy(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14126515096_1134fae695.jpg",
+    "top1": "ladybug",
+    "prob1": "0.413",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.41) | leaf beetle(0.27) | long-horned beetle(0.00) | ground beetle(0.00) | weevil(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/1413979148_b40d63db90_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5688",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.57) | ladybug(0.05) | earthstar(0.03) | ant(0.02) | buckeye(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14171812905_8b81d50eb9_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6578",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.66) | artichoke(0.01) | American coot(0.01) | spider web(0.01) | daisy(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14211880544_5d1f9d5aa8_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.636",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.64) | earthstar(0.01) | ringlet(0.01) | artichoke(0.01) | bee(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14375349004_68d893254a_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6461",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.65) | artichoke(0.03) | bee(0.01) | cabbage butterfly(0.01) | ringlet(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14376454225_a1de336c5b.jpg",
+    "top1": "green lizard",
+    "prob1": "0.3527",
+    "nonflower_flag": "True",
+    "top5": "green lizard(0.35) | American chameleon(0.03) | daisy(0.01) | sulphur butterfly(0.01) | African chameleon(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14396023703_11c5dd35a9.jpg",
+    "top1": "crane bird",
+    "prob1": "0.4246",
+    "nonflower_flag": "True",
+    "top5": "crane bird(0.42) | sea urchin(0.08) | lampshade(0.03) | balloon(0.03) | seashore(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/144040769_c5b805f868.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5903",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.59) | ladybug(0.03) | bee(0.02) | mushroom(0.02) | ant(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14455605089_8bbfb41cd7_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6635",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.66) | bee(0.01) | artichoke(0.01) | ladybug(0.01) | daisy(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/146023167_f905574d97_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6845",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.68) | artichoke(0.04) | bee(0.01) | ringlet(0.01) | earthstar(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14740350060_a489d9fa06.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6316",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.63) | artichoke(0.03) | bee(0.01) | daisy(0.00) | cabbage butterfly(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14886860069_b84665a073.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4841",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.48) | ladybug(0.14) | earthstar(0.03) | bee(0.03) | goldfinch(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/14886963928_d4856f1eb6_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.548",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.55) | ladybug(0.06) | bee(0.02) | rapeseed(0.01) | daisy(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/15002906952_cab2cb29cf.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4826",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.48) | cardoon(0.18) | daisy(0.02) | bee(0.02) | ant(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/151385301_153eacf6b5_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.6258",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.63) | spider web(0.09) | leaf beetle(0.01) | ant(0.01) | quill(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/151385302_f8980a257f_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.3599",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.36) | cardoon(0.24) | goldfinch(0.02) | bee(0.01) | ant(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/15219268336_f2460fca88_m.jpg",
+    "top1": "barn spider",
+    "prob1": "0.4599",
+    "nonflower_flag": "True",
+    "top5": "barn spider(0.46) | ear(0.09) | knot(0.04) | ant(0.02) | corn(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/15819121091_26a5243340_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5105",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.51) | goldfinch(0.03) | ringlet(0.03) | cabbage butterfly(0.03) | grasshopper(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/16716172029_2166d8717f_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.7882",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.79) | earthstar(0.04) | daisy(0.01) | hen-of-the-woods(0.00) | bee(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/16953818045_fea21c8bf8.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6771",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.68) | bee(0.02) | artichoke(0.01) | ladybug(0.01) | ant(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/17020815734_81e8db8008_m.jpg",
+    "top1": "ground beetle",
+    "prob1": "0.5237",
+    "nonflower_flag": "True",
+    "top5": "ground beetle(0.52) | long-horned beetle(0.10) | lycaenid(0.03) | rapeseed(0.02) | daisy(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/17175932454_c052e205c1_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4466",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.45) | ant(0.04) | buckeye(0.03) | earthstar(0.02) | leafhopper(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/17346385582_7ba433dbbe.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4329",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.43) | ant(0.05) | quill(0.03) | cardoon(0.02) | spider web(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/17482158576_86c5ebc2f8.jpg",
+    "top1": "garden spider",
+    "prob1": "0.3823",
+    "nonflower_flag": "True",
+    "top5": "garden spider(0.38) | wolf spider(0.10) | spider web(0.07) | barn spider(0.05) | harvestman(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/1776290427_9d8d5be6ac.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4294",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.43) | daisy(0.06) | bubble(0.03) | goldfinch(0.02) | bee(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/18111636378_856027a7b8_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4482",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.45) | goldfinch(0.07) | tripod(0.02) | beacon(0.02) | seashore(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/18243351371_5fda92ac0a_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4619",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.46) | sea urchin(0.20) | ladybug(0.03) | bee(0.02) | daisy(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/18996965033_1d92e5c99e.jpg",
+    "top1": "cardoon",
+    "prob1": "0.7739",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.77) | mushroom(0.02) | earthstar(0.01) | hay(0.01) | artichoke(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/19067907051_16d530c7d2.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5548",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.55) | artichoke(0.01) | earthstar(0.01) | daisy(0.01) | bee(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/19435491090_7af558e17e.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5501",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.55) | lampshade(0.03) | chainlink fence(0.02) | bee(0.02) | ant(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/19438516548_bbaf350664.jpg",
+    "top1": "ladybug",
+    "prob1": "0.5226",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.52) | quill(0.07) | spider web(0.04) | ear(0.01) | feather boa(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/19440910519_cb1162470e.jpg",
+    "top1": "spider web",
+    "prob1": "0.457",
+    "nonflower_flag": "True",
+    "top5": "spider web(0.46) | black grouse(0.09) | barn spider(0.02) | fountain(0.02) | ear(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/19613204505_da554eb56a_n.jpg",
+    "top1": "spider web",
+    "prob1": "0.8021",
+    "nonflower_flag": "True",
+    "top5": "spider web(0.80) | ladybug(0.01) | sea urchin(0.01) | peacock(0.01) | Petri dish(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2019520447_48b2354a20_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.7125",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.71) | artichoke(0.02) | bee(0.01) | cabbage butterfly(0.00) | earthstar(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/20754920332_53b995fc63_n.jpg",
+    "top1": "spider web",
+    "prob1": "0.7599",
+    "nonflower_flag": "True",
+    "top5": "spider web(0.76) | barn spider(0.01) | ladybug(0.01) | car mirror(0.00) | harvestman(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/22196426956_eca94f6faa_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4758",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.48) | ladybug(0.02) | hip(0.02) | bee(0.02) | earthstar(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2294126841_e478564e77_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4301",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.43) | hay(0.07) | ladybug(0.03) | beacon(0.02) | knot(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2330343016_23acc484ee.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6519",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.65) | bee(0.04) | ladybug(0.03) | ant(0.02) | weevil(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/23659122395_3467d88c02_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.496",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.50) | Bedlington terrier(0.04) | Dandie Dinmont(0.02) | earthstar(0.02) | mushroom(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2444241718_3ca53ce921.jpg",
+    "top1": "ladybug",
+    "prob1": "0.5392",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.54) | spider web(0.04) | cardoon(0.04) | leaf beetle(0.03) | ant(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2449852402_45d12b9875_n.jpg",
+    "top1": "sulphur butterfly",
+    "prob1": "0.4302",
+    "nonflower_flag": "True",
+    "top5": "sulphur butterfly(0.43) | bee(0.18) | lorikeet(0.10) | cabbage butterfly(0.06) | hummingbird(0.05)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2469856983_fe8e36ba57.jpg",
+    "top1": "ladybug",
+    "prob1": "0.7261",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.73) | leaf beetle(0.03) | cardoon(0.03) | leafhopper(0.01) | bee(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2479491210_98e41c4e7d_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4516",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.45) | earthstar(0.11) | daisy(0.04) | pot(0.02) | mushroom(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2502613166_2c231b47cb_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4454",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.45) | quill(0.09) | cardoon(0.03) | daisy(0.02) | sea anemone(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2538797744_deb53ac253.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3554",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.36) | daisy(0.19) | bee(0.02) | mushroom(0.02) | swing(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2596413098_7ef69b7e1d_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.417",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.42) | earthstar(0.07) | ringlet(0.06) | hen-of-the-woods(0.03) | coral fungus(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2608937632_cfd93bc7cd.jpg",
+    "top1": "cardoon",
+    "prob1": "0.461",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.46) | bee(0.12) | cabbage butterfly(0.04) | daisy(0.03) | quill(0.03)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2622697182_ea4aff29dd_n.jpg",
+    "top1": "volcano",
+    "prob1": "0.5516",
+    "nonflower_flag": "True",
+    "top5": "volcano(0.55) | lakeside(0.06) | earthstar(0.03) | cardoon(0.02) | seashore(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2625836599_03e192266f.jpg",
+    "top1": "cardoon",
+    "prob1": "0.439",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.44) | ringlet(0.04) | mushroom(0.03) | bee(0.03) | cabbage butterfly(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2661585172_94707236be_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4297",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.43) | ladybug(0.09) | bee(0.05) | ant(0.04) | spider web(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/2780702427_312333ef33.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6916",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.69) | artichoke(0.07) | ladybug(0.02) | paintbrush(0.02) | quill(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3005677730_2662753d3f_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.646",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.65) | bee(0.03) | cabbage butterfly(0.03) | ringlet(0.02) | artichoke(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3149809654_6a4b31314d_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3538",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.35) | daisy(0.10) | bee(0.03) | cabbage butterfly(0.03) | ladybug(0.03)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3365850019_8158a161a8_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5515",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.55) | ladybug(0.06) | buckeye(0.02) | bee(0.01) | ant(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3393564906_f2df184b76_n.jpg",
+    "top1": "spider web",
+    "prob1": "0.4567",
+    "nonflower_flag": "True",
+    "top5": "spider web(0.46) | ladybug(0.10) | cardoon(0.08) | garden spider(0.02) | daisy(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3505026222_c760df0035_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4551",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.46) | yellow lady's slipper(0.02) | artichoke(0.01) | ringlet(0.01) | earthstar(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3518608454_c3fd3c311c_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.7002",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.70) | artichoke(0.01) | sax(0.01) | hammer(0.01) | barn spider(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3533075436_0954145b9f_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3727",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.37) | daisy(0.10) | chainlink fence(0.03) | earthstar(0.03) | mushroom(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3554992110_81d8c9b0bd_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5872",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.59) | daisy(0.03) | earthstar(0.02) | bee(0.02) | quill(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3675486971_d4c8683b54_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.515",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.51) | daisy(0.04) | sea urchin(0.02) | artichoke(0.01) | cabbage butterfly(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3696596109_4c4419128a_m.jpg",
+    "top1": "spider web",
+    "prob1": "0.4309",
+    "nonflower_flag": "True",
+    "top5": "spider web(0.43) | cardoon(0.07) | barn spider(0.03) | ladybug(0.03) | daisy(0.03)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3823142577_dd5acd5ac6_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.677",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.68) | ladybug(0.02) | bee(0.01) | Arctic fox(0.01) | earthstar(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3991962484_085ba2da94.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4809",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.48) | knot(0.05) | hay(0.05) | ear(0.04) | cardoon(0.04)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/3998275481_651205e02d.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4909",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.49) | daisy(0.08) | artichoke(0.01) | ladybug(0.01) | bee(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4510350093_3700064215.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4375",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.44) | daisy(0.22) | earthstar(0.04) | cardoon(0.02) | barn spider(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4528742654_99d233223b_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6156",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.62) | artichoke(0.03) | bee(0.02) | sulphur butterfly(0.02) | rapeseed(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4552571121_2677bcdec3.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3783",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.38) | artichoke(0.06) | ringlet(0.04) | mantis(0.03) | ear(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4571681134_b605a61547_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.7263",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.73) | crane bird(0.01) | Arctic fox(0.01) | earthstar(0.01) | bee(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4571923094_b9cefa9438_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5319",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.53) | bee(0.08) | ringlet(0.02) | daisy(0.02) | cabbage butterfly(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4606893762_c2f26c7e91_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.6089",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.61) | cardoon(0.03) | quill(0.02) | ear(0.02) | leaf beetle(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4622115595_a0de9f2013_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4535",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.45) | ringlet(0.03) | daisy(0.02) | bee(0.02) | cabbage butterfly(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4632251871_9f324a7bb5.jpg",
+    "top1": "ladybug",
+    "prob1": "0.5393",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.54) | feather boa(0.05) | parachute(0.02) | sea anemone(0.02) | hay(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4632757134_40156d7d5b.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4247",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.42) | ladybug(0.24) | bee(0.04) | leafhopper(0.02) | leaf beetle(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4632761610_768360d425.jpg",
+    "top1": "ladybug",
+    "prob1": "0.3864",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.39) | cardoon(0.09) | snail(0.07) | bee(0.06) | sea anemone(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4638438929_2ec76083c8_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6844",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.68) | earthstar(0.01) | artichoke(0.01) | bee(0.01) | hen-of-the-woods(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4675287055_5938ed62c4.jpg",
+    "top1": "cardoon",
+    "prob1": "0.416",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.42) | Arctic fox(0.14) | Angora(0.04) | Persian cat(0.03) | langur(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4691257171_23a29aaa33_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.7298",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.73) | artichoke(0.01) | bee(0.00) | cabbage butterfly(0.00) | earthstar(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4713958242_fbcfe9a61b_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3888",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.39) | daisy(0.08) | earthstar(0.02) | hen-of-the-woods(0.02) | mushroom(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/4858372040_52216eb0bd.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4718",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.47) | cardoon(0.10) | ant(0.04) | bee(0.02) | leaf beetle(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/5109496141_8dcf673d43_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.6347",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.63) | leaf beetle(0.03) | daisy(0.00) | ant(0.00) | bee(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/5607256228_2294c201b3.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5312",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.53) | ringlet(0.06) | cabbage butterfly(0.03) | ladybug(0.02) | mushroom(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/5623855601_ecaebdb8fe.jpg",
+    "top1": "ladybug",
+    "prob1": "0.5928",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.59) | parachute(0.02) | balloon(0.02) | goldfinch(0.02) | ant(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/5726984343_ae124aed97.jpg",
+    "top1": "long-horned beetle",
+    "prob1": "0.5868",
+    "nonflower_flag": "True",
+    "top5": "long-horned beetle(0.59) | ground beetle(0.04) | leaf beetle(0.03) | weevil(0.02) | tiger beetle(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/5727534342_419604c177_n.jpg",
+    "top1": "long-horned beetle",
+    "prob1": "0.6685",
+    "nonflower_flag": "True",
+    "top5": "long-horned beetle(0.67) | leaf beetle(0.02) | ground beetle(0.02) | tiger beetle(0.02) | cricket(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/5772194932_60b833091f.jpg",
+    "top1": "ladybug",
+    "prob1": "0.3632",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.36) | ear(0.25) | sea anemone(0.05) | cardoon(0.04) | ant(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/5875763050_82f32f2eed_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4111",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.41) | daisy(0.05) | bubble(0.02) | rapeseed(0.02) | spider web(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/6208857436_14a65fe4af_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6254",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.63) | artichoke(0.02) | earthstar(0.01) | mushroom(0.01) | hen-of-the-woods(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/6400843175_ef07053f8f_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.511",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.51) | ladybug(0.02) | bee(0.02) | earthstar(0.02) | ringlet(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/674407101_57676c40fb.jpg",
+    "top1": "ladybug",
+    "prob1": "0.3626",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.36) | earthstar(0.12) | bee(0.02) | quill(0.02) | cardoon(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/6953830582_8525e0423c_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5155",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.52) | earthstar(0.04) | artichoke(0.03) | ringlet(0.01) | bee(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/6954604340_d3223ed296_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4049",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.40) | earthstar(0.03) | stinkhorn(0.02) | hen-of-the-woods(0.02) | artichoke(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/6985099958_5249a4688b.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4015",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.40) | mushroom(0.19) | ringlet(0.13) | bee(0.02) | cabbage butterfly(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/6994925894_030e157fe0.jpg",
+    "top1": "spider web",
+    "prob1": "0.6634",
+    "nonflower_flag": "True",
+    "top5": "spider web(0.66) | barn spider(0.01) | sea anemone(0.01) | wolf spider(0.01) | ladybug(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/7062171343_db61c92737_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5855",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.59) | earthstar(0.04) | goldfinch(0.03) | ladybug(0.02) | bee(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/7193058132_36fd883048_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4043",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.40) | daisy(0.10) | bee(0.06) | ringlet(0.04) | cabbage butterfly(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/7226987694_34552c3115_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4827",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.48) | sea anemone(0.09) | sea urchin(0.03) | cardoon(0.01) | leaf beetle(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/7280217714_fb9ffccf2d_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3879",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.39) | goldfinch(0.10) | ladybug(0.06) | daisy(0.04) | bee(0.03)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/7280221020_98b473b20d_n.jpg",
+    "top1": "spider web",
+    "prob1": "0.3794",
+    "nonflower_flag": "True",
+    "top5": "spider web(0.38) | ladybug(0.09) | leafhopper(0.02) | garden spider(0.02) | barn spider(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/7280222348_a87725ca77.jpg",
+    "top1": "ladybug",
+    "prob1": "0.7319",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.73) | ear(0.04) | cardoon(0.01) | feather boa(0.01) | spider web(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/7295618968_c08a326cc1_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5509",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.55) | earthstar(0.08) | ladybug(0.04) | bee(0.02) | hen-of-the-woods(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/7308600792_27cff2f73f.jpg",
+    "top1": "cardoon",
+    "prob1": "0.634",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.63) | artichoke(0.02) | bubble(0.01) | spider web(0.01) | daisy(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/7448453384_fb9caaa9af_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3658",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.37) | goldfinch(0.05) | house finch(0.01) | hay(0.01) | parachute(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/7719263062_3c8a307a5d.jpg",
+    "top1": "cabbage butterfly",
+    "prob1": "0.6976",
+    "nonflower_flag": "True",
+    "top5": "cabbage butterfly(0.70) | sulphur butterfly(0.01) | ringlet(0.00) | lycaenid(0.00) | daisy(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8011324555_375b7b5b0a.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5731",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.57) | artichoke(0.02) | bee(0.01) | ringlet(0.01) | cabbage butterfly(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8168031302_6e36f39d87.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4288",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.43) | daisy(0.16) | ant(0.03) | mushroom(0.02) | bee(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8681169825_19a21c6bf5_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4086",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.41) | golf ball(0.05) | earthstar(0.04) | daisy(0.03) | barn spider(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8740787470_67230d0609.jpg",
+    "top1": "cardoon",
+    "prob1": "0.667",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.67) | mushroom(0.03) | artichoke(0.02) | sea urchin(0.02) | bee(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8749577087_dc2521615f_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5779",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.58) | daisy(0.01) | bee(0.01) | lakeside(0.01) | earthstar(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8759118120_9eac064e38_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4446",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.44) | daisy(0.05) | mushroom(0.03) | ringlet(0.02) | earthstar(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8880158802_6e10a452c7_m.jpg",
+    "top1": "ladybug",
+    "prob1": "0.3554",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.36) | rapeseed(0.10) | cardoon(0.07) | earthstar(0.06) | daisy(0.06)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8979062599_86cac547b8.jpg",
+    "top1": "ladybug",
+    "prob1": "0.5828",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.58) | cardoon(0.05) | leaf beetle(0.05) | bee(0.03) | ant(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8979087213_28f572174c.jpg",
+    "top1": "ladybug",
+    "prob1": "0.6288",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.63) | leaf beetle(0.06) | cardoon(0.04) | bee(0.03) | leafhopper(0.03)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8980145452_efbd6e3b04.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6126",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.61) | bee(0.02) | cabbage butterfly(0.02) | goldfinch(0.02) | ladybug(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8980164828_04fbf64f79_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5742",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.57) | bee(0.03) | cabbage butterfly(0.02) | ladybug(0.02) | ringlet(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/8980273068_cf7e8b880a_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.5514",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.55) | leaf beetle(0.05) | bee(0.04) | leafhopper(0.03) | buckeye(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/9029297232_de50698e2f_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.3538",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.35) | quill(0.18) | ant(0.02) | bee(0.02) | cardoon(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/9188647508_3b56e62f69.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6572",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.66) | bee(0.05) | artichoke(0.05) | ladybug(0.02) | ant(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/9262004825_710346cde9_n.jpg",
+    "top1": "spider web",
+    "prob1": "0.4999",
+    "nonflower_flag": "True",
+    "top5": "spider web(0.50) | coral reef(0.07) | sea anemone(0.06) | sea urchin(0.05) | cardoon(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/9613826015_f345354874.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3881",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.39) | daisy(0.18) | bee(0.03) | ladybug(0.02) | ringlet(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "dandelion/9853885425_4a82356f1d_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5932",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.59) | mushroom(0.08) | vulture(0.02) | bee(0.02) | artichoke(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "roses/1540738662_7b4152e344_m.jpg",
+    "top1": "head cabbage",
+    "prob1": "0.3881",
+    "nonflower_flag": "True",
+    "top5": "head cabbage(0.39) | velvet(0.06) | coil(0.04) | snail(0.04) | conch(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "roses/3171577977_8608282f04_m.jpg",
+    "top1": "sulphur butterfly",
+    "prob1": "0.3981",
+    "nonflower_flag": "True",
+    "top5": "sulphur butterfly(0.40) | cabbage butterfly(0.14) | hummingbird(0.04) | brambling(0.01) | monarch(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "roses/488849503_63a290a8c2_m.jpg",
+    "top1": "castle",
+    "prob1": "0.3677",
+    "nonflower_flag": "True",
+    "top5": "castle(0.37) | monastery(0.13) | palace(0.03) | promontory(0.03) | lakeside(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "roses/509239741_28e2cfe492_m.jpg",
+    "top1": "head cabbage",
+    "prob1": "0.5171",
+    "nonflower_flag": "True",
+    "top5": "head cabbage(0.52) | vase(0.03) | hair slide(0.02) | bonnet(0.01) | pot(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "roses/5897035797_e67bf68124_n.jpg",
+    "top1": "cabbage butterfly",
+    "prob1": "0.6832",
+    "nonflower_flag": "True",
+    "top5": "cabbage butterfly(0.68) | sulphur butterfly(0.01) | picket fence(0.00) | bee(0.00) | daisy(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "roses/5960270643_1b8a94822e_m.jpg",
+    "top1": "Persian cat",
+    "prob1": "0.4069",
+    "nonflower_flag": "True",
+    "top5": "Persian cat(0.41) | Siamese cat(0.06) | tabby(0.04) | tiger cat(0.01) | Egyptian cat(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "roses/7419966772_d6c1c22a81.jpg",
+    "top1": "church",
+    "prob1": "0.3615",
+    "nonflower_flag": "True",
+    "top5": "church(0.36) | bell cote(0.10) | greenhouse(0.05) | thatch(0.03) | monastery(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "roses/9309388105_12c0b8dd54_m.jpg",
+    "top1": "hummingbird",
+    "prob1": "0.3512",
+    "nonflower_flag": "True",
+    "top5": "hummingbird(0.35) | pot(0.07) | vase(0.05) | sulphur butterfly(0.03) | hip(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "sunflowers/15123604714_dd034a4a3b_n.jpg",
+    "top1": "barn",
+    "prob1": "0.3619",
+    "nonflower_flag": "True",
+    "top5": "barn(0.36) | hay(0.07) | rapeseed(0.03) | greenhouse(0.03) | valley(0.03)"
+  },
+  {
+    "split": "train",
+    "path": "sunflowers/2883115609_5a69357b5d_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.7813",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.78) | artichoke(0.01) | goldfinch(0.00) | daisy(0.00) | sulphur butterfly(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "sunflowers/310380634_60e6c79989.jpg",
+    "top1": "bicycle-built-for-two",
+    "prob1": "0.5985",
+    "nonflower_flag": "True",
+    "top5": "bicycle-built-for-two(0.60) | tricycle(0.20) | jinrikisha(0.03) | mountain bike(0.01) | moped(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "sunflowers/8081530919_c882d46bb0_n.jpg",
+    "top1": "lakeside",
+    "prob1": "0.4027",
+    "nonflower_flag": "True",
+    "top5": "lakeside(0.40) | rapeseed(0.09) | volcano(0.06) | boathouse(0.04) | hip(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "sunflowers/8478248531_1a16e232b5.jpg",
+    "top1": "hummingbird",
+    "prob1": "0.6429",
+    "nonflower_flag": "True",
+    "top5": "hummingbird(0.64) | bee(0.01) | daisy(0.00) | water ouzel(0.00) | fly(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "tulips/13509973805_bda5fa8982.jpg",
+    "top1": "sandbar",
+    "prob1": "0.7151",
+    "nonflower_flag": "True",
+    "top5": "sandbar(0.72) | white stork(0.01) | seashore(0.01) | lakeside(0.01) | airliner(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "tulips/141479422_5a6fa1fd1b_m.jpg",
+    "top1": "Shetland sheepdog",
+    "prob1": "0.7106",
+    "nonflower_flag": "True",
+    "top5": "Shetland sheepdog(0.71) | collie(0.05) | Border collie(0.00) | papillon(0.00) | Sussex spaniel(0.00)"
+  },
+  {
+    "split": "train",
+    "path": "tulips/16282277874_b92776b194.jpg",
+    "top1": "sulphur butterfly",
+    "prob1": "0.4114",
+    "nonflower_flag": "True",
+    "top5": "sulphur butterfly(0.41) | bee(0.09) | yellow lady's slipper(0.04) | ant(0.02) | daisy(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "tulips/2232289392_9a79a0c5cb_n.jpg",
+    "top1": "hummingbird",
+    "prob1": "0.5106",
+    "nonflower_flag": "True",
+    "top5": "hummingbird(0.51) | pot(0.11) | vase(0.07) | picket fence(0.05) | sulphur butterfly(0.02)"
+  },
+  {
+    "split": "train",
+    "path": "tulips/3105702091_f02ce75226.jpg",
+    "top1": "passenger car",
+    "prob1": "0.3792",
+    "nonflower_flag": "True",
+    "top5": "passenger car(0.38) | minibus(0.19) | trolleybus(0.07) | school bus(0.04) | streetcar(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "tulips/4838669164_ffb6f67139.jpg",
+    "top1": "sulphur butterfly",
+    "prob1": "0.3782",
+    "nonflower_flag": "True",
+    "top5": "sulphur butterfly(0.38) | bee(0.11) | ant(0.07) | ladybug(0.04) | leaf beetle(0.04)"
+  },
+  {
+    "split": "train",
+    "path": "tulips/506350421_2ba59e568e_m.jpg",
+    "top1": "palace",
+    "prob1": "0.5645",
+    "nonflower_flag": "True",
+    "top5": "palace(0.56) | castle(0.10) | monastery(0.02) | greenhouse(0.01) | lakeside(0.01)"
+  },
+  {
+    "split": "train",
+    "path": "tulips/5698944116_fd35fe6bea.jpg",
+    "top1": "sulphur butterfly",
+    "prob1": "0.4028",
+    "nonflower_flag": "True",
+    "top5": "sulphur butterfly(0.40) | ant(0.10) | bee(0.09) | pot(0.03) | bell pepper(0.02)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/10946896405_81d2d50941_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.7666",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.77) | artichoke(0.01) | ringlet(0.01) | bee(0.00) | earthstar(0.00)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/1353279846_7e6b87606d.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6747",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.67) | mushroom(0.02) | daisy(0.02) | artichoke(0.01) | ant(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/14002252932_64d5cbdac7.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4873",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.49) | cardoon(0.07) | harvestman(0.03) | quill(0.02) | spider web(0.02)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/14053397367_75cba846eb_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6196",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.62) | artichoke(0.02) | crane bird(0.02) | sea anemone(0.01) | ear(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/14554897292_b3e30e52f2.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5218",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.52) | ant(0.06) | ladybug(0.05) | quill(0.02) | bee(0.02)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/15987457_49dc11bf4b.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3978",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.40) | ladybug(0.17) | mushroom(0.03) | daisy(0.02) | ant(0.02)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/18282528206_7fb3166041.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4708",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.47) | peacock(0.05) | sea urchin(0.02) | mushroom(0.02) | earthstar(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/18687587599_3dd4fdf255.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5256",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.53) | mushroom(0.02) | coral fungus(0.02) | artichoke(0.02) | earthstar(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/19004688463_12a8423109.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4459",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.45) | ear(0.10) | peacock(0.10) | quill(0.07) | leafhopper(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/19443674130_08db1d9578_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5176",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.52) | earthstar(0.07) | Bedlington terrier(0.05) | rapeseed(0.02) | hen-of-the-woods(0.02)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/22274701614_901606ee34_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3706",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.37) | ladybug(0.15) | bee(0.03) | leaf beetle(0.03) | ant(0.02)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/23192507093_2e6ec77bef_n.jpg",
+    "top1": "barn spider",
+    "prob1": "0.5874",
+    "nonflower_flag": "True",
+    "top5": "barn spider(0.59) | garden spider(0.05) | sea anemone(0.02) | spider web(0.02) | tick(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/2335702923_decb9a860b_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6589",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.66) | earthstar(0.08) | barn spider(0.02) | parachute(0.01) | golf ball(0.00)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/2443192475_c64c66d9c2.jpg",
+    "top1": "ladybug",
+    "prob1": "0.5047",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.50) | cardoon(0.06) | sea anemone(0.05) | goldfinch(0.04) | ant(0.02)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/2457473644_5242844e52_m.jpg",
+    "top1": "ladybug",
+    "prob1": "0.419",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.42) | quill(0.14) | porcupine(0.02) | peacock(0.02) | daisy(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/2477231067_3aecef1bf8_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.3521",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.35) | daisy(0.28) | chainlink fence(0.02) | pot(0.01) | bee(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/344318990_7be3fb0a7d.jpg",
+    "top1": "strainer",
+    "prob1": "0.3811",
+    "nonflower_flag": "True",
+    "top5": "strainer(0.38) | thimble(0.06) | sea urchin(0.02) | ladybug(0.01) | mushroom(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/4573204407_babff0dce4_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5129",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.51) | bee(0.10) | ladybug(0.08) | earthstar(0.02) | ant(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/4574451859_432c856b6e_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.3578",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.36) | cardoon(0.16) | hen-of-the-woods(0.04) | coral fungus(0.03) | earthstar(0.03)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/5608832856_f5d49de778.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4024",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.40) | daisy(0.06) | bee(0.03) | ladybug(0.03) | artichoke(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/5757012454_c37f305b73.jpg",
+    "top1": "ladybug",
+    "prob1": "0.5743",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.57) | coil(0.09) | ant(0.03) | leaf beetle(0.03) | spider web(0.02)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/7291185504_b740bbeba4_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5831",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.58) | earthstar(0.03) | hen-of-the-woods(0.02) | artichoke(0.01) | ringlet(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/8717787983_c83bdf39fe_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6076",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.61) | artichoke(0.01) | earthstar(0.01) | daisy(0.00) | barn spider(0.00)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/8733226215_161309f8ec.jpg",
+    "top1": "ladybug",
+    "prob1": "0.6876",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.69) | cardoon(0.05) | bee(0.03) | leaf beetle(0.02) | weevil(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "dandelion/8842317179_d59cf218cb_n.jpg",
+    "top1": "spider web",
+    "prob1": "0.4919",
+    "nonflower_flag": "True",
+    "top5": "spider web(0.49) | ladybug(0.07) | cardoon(0.06) | barn spider(0.06) | garden spider(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "roses/11694025703_9a906fedc1_n.jpg",
+    "top1": "stupa",
+    "prob1": "0.3502",
+    "nonflower_flag": "True",
+    "top5": "stupa(0.35) | thatch(0.11) | monastery(0.07) | palace(0.03) | fountain(0.03)"
+  },
+  {
+    "split": "val",
+    "path": "roses/8775267816_726ddc6d92_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.8754",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.88) | daisy(0.02) | bee(0.01) | artichoke(0.01) | ant(0.00)"
+  },
+  {
+    "split": "val",
+    "path": "sunflowers/164668737_aeab0cb55e_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4565",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.46) | pineapple(0.22) | leaf beetle(0.02) | leafhopper(0.01) | fly(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "sunflowers/2807106374_f422b5f00c.jpg",
+    "top1": "head cabbage",
+    "prob1": "0.5721",
+    "nonflower_flag": "True",
+    "top5": "head cabbage(0.57) | mobile home(0.02) | greenhouse(0.02) | cauliflower(0.01) | barn(0.01)"
+  },
+  {
+    "split": "val",
+    "path": "sunflowers/40410686_272bc66faf_m.jpg",
+    "top1": "head cabbage",
+    "prob1": "0.6088",
+    "nonflower_flag": "True",
+    "top5": "head cabbage(0.61) | greenhouse(0.06) | zucchini(0.02) | cauliflower(0.02) | cucumber(0.02)"
+  },
+  {
+    "split": "val",
+    "path": "tulips/13513644515_a51470b899.jpg",
+    "top1": "head cabbage",
+    "prob1": "0.4384",
+    "nonflower_flag": "True",
+    "top5": "head cabbage(0.44) | greenhouse(0.05) | maze(0.05) | rapeseed(0.04) | cauliflower(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "daisy/909609509_a05ccb8127.jpg",
+    "top1": "leaf beetle",
+    "prob1": "0.5882",
+    "nonflower_flag": "True",
+    "top5": "leaf beetle(0.59) | daisy(0.02) | fly(0.02) | bee(0.02) | ground beetle(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/10043234166_e6dd915111_n.jpg",
+    "top1": "ladybug",
+    "prob1": "0.5259",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.53) | sea anemone(0.05) | ear(0.03) | cardoon(0.03) | buckeye(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/13887031789_97437f246b.jpg",
+    "top1": "ladybug",
+    "prob1": "0.3769",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.38) | cardoon(0.05) | ant(0.04) | damselfly(0.02) | barn spider(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/14093744313_b66bc95072.jpg",
+    "top1": "cardoon",
+    "prob1": "0.7051",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.71) | ant(0.02) | bee(0.02) | artichoke(0.01) | earthstar(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/14728922673_99086a3818_n.jpg",
+    "top1": "cabbage butterfly",
+    "prob1": "0.6824",
+    "nonflower_flag": "True",
+    "top5": "cabbage butterfly(0.68) | sulphur butterfly(0.01) | lacewing(0.00) | rapeseed(0.00) | ringlet(0.00)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/17276354745_2e312a72b5_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.401",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.40) | mushroom(0.15) | coral fungus(0.05) | artichoke(0.04) | earthstar(0.03)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/17280886635_e384d91300_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5318",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.53) | ostrich(0.04) | earthstar(0.03) | rapeseed(0.02) | American coot(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/17574213074_f5416afd84.jpg",
+    "top1": "spider web",
+    "prob1": "0.7383",
+    "nonflower_flag": "True",
+    "top5": "spider web(0.74) | Petri dish(0.01) | window screen(0.01) | hip(0.01) | chainlink fence(0.00)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/18999743619_cec3f39bee.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4057",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.41) | sea urchin(0.25) | ladybug(0.03) | ear(0.01) | artichoke(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/19064700925_b93d474e37.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4915",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.49) | daisy(0.01) | artichoke(0.01) | earthstar(0.01) | spider web(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/19617643201_9922eec796.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4673",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.47) | earthstar(0.05) | ringlet(0.04) | hip(0.03) | dragonfly(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/19622465055_2a62ebd504_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6834",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.68) | earthstar(0.06) | prairie chicken(0.01) | black grouse(0.01) | ringlet(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/2076141453_c63801962a_m.jpg",
+    "top1": "ladybug",
+    "prob1": "0.5025",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.50) | earthstar(0.09) | cardoon(0.07) | buckeye(0.02) | ear(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/2477986396_19da36d557_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5759",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.58) | ladybug(0.07) | bee(0.03) | daisy(0.02) | ringlet(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/2521827947_9d237779bb_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.37",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.37) | beacon(0.21) | leafhopper(0.01) | sea urchin(0.01) | flagpole(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/3539077354_c67aa7168d_m.jpg",
+    "top1": "spider web",
+    "prob1": "0.383",
+    "nonflower_flag": "True",
+    "top5": "spider web(0.38) | ladybug(0.27) | leaf beetle(0.02) | ant(0.01) | cucumber(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/4134441089_c8c1e6132a.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6254",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.63) | spider web(0.01) | bee(0.01) | goldfinch(0.01) | daisy(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/4512569988_2b3f802cc6.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4957",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.50) | sea anemone(0.03) | cardoon(0.02) | porcupine(0.01) | sea urchin(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/486234138_688e01aa9b_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5298",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.53) | daisy(0.03) | earthstar(0.02) | mushroom(0.01) | bee(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/501987288_c69c4e0c90_m.jpg",
+    "top1": "cabbage butterfly",
+    "prob1": "0.7062",
+    "nonflower_flag": "True",
+    "top5": "cabbage butterfly(0.71) | sulphur butterfly(0.01) | ringlet(0.00) | daisy(0.00) | rapeseed(0.00)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/5768217474_f6b1eef6d5_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4009",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.40) | ladybug(0.10) | ant(0.08) | bee(0.03) | earthstar(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/5776879272_95008399c3.jpg",
+    "top1": "ladybug",
+    "prob1": "0.4677",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.47) | cardoon(0.13) | leaf beetle(0.06) | leafhopper(0.06) | bee(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/6019234426_d25ea1230a_m.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5668",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.57) | artichoke(0.01) | earthstar(0.01) | television(0.01) | bee(0.00)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/7315832212_b0ceeb8de8_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4571",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.46) | artichoke(0.05) | mushroom(0.04) | daisy(0.03) | bee(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/8756906129_b05a1b26f2.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4158",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.42) | ice lolly(0.09) | mushroom(0.03) | artichoke(0.02) | daisy(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/8978962053_0727b41d26.jpg",
+    "top1": "cardoon",
+    "prob1": "0.5977",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.60) | ladybug(0.03) | bee(0.02) | goldfinch(0.01) | cabbage butterfly(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/8980266062_8387f6cc89.jpg",
+    "top1": "ladybug",
+    "prob1": "0.6266",
+    "nonflower_flag": "True",
+    "top5": "ladybug(0.63) | leaf beetle(0.05) | cardoon(0.05) | bee(0.03) | leafhopper(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "dandelion/9293460423_7fbb1e3c32_n.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4933",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.49) | earthstar(0.09) | ladybug(0.03) | sea anemone(0.02) | hen-of-the-woods(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "roses/15312360171_57bde98799_n.jpg",
+    "top1": "Egyptian cat",
+    "prob1": "0.5454",
+    "nonflower_flag": "True",
+    "top5": "Egyptian cat(0.55) | tabby(0.07) | tiger cat(0.05) | vase(0.03) | dining table(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "roses/1666341535_99c6f7509f_n.jpg",
+    "top1": "hummingbird",
+    "prob1": "0.6253",
+    "nonflower_flag": "True",
+    "top5": "hummingbird(0.63) | vase(0.05) | pot(0.03) | bulbul(0.02) | cabbage butterfly(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "roses/1757822526_fe30b9b3ca_m.jpg",
+    "top1": "head cabbage",
+    "prob1": "0.4893",
+    "nonflower_flag": "True",
+    "top5": "head cabbage(0.49) | vase(0.05) | bow tie(0.03) | mask(0.02) | teapot(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "sunflowers/14646281372_5f13794b47.jpg",
+    "top1": "cardoon",
+    "prob1": "0.6442",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.64) | artichoke(0.03) | bee(0.01) | sulphur butterfly(0.00) | cabbage butterfly(0.00)"
+  },
+  {
+    "split": "test",
+    "path": "sunflowers/184682506_8a9b8c662d.jpg",
+    "top1": "cardoon",
+    "prob1": "0.4467",
+    "nonflower_flag": "True",
+    "top5": "cardoon(0.45) | daisy(0.07) | artichoke(0.02) | greenhouse(0.02) | bee(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "sunflowers/2729206569_9dd2b5a3ed.jpg",
+    "top1": "head cabbage",
+    "prob1": "0.392",
+    "nonflower_flag": "True",
+    "top5": "head cabbage(0.39) | corn(0.20) | ear(0.05) | rapeseed(0.02) | greenhouse(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "sunflowers/9309473873_9d62b9082e.jpg",
+    "top1": "lakeside",
+    "prob1": "0.6192",
+    "nonflower_flag": "True",
+    "top5": "lakeside(0.62) | daisy(0.11) | rapeseed(0.04) | promontory(0.01) | seashore(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "tulips/13513851673_9d813dc7b0.jpg",
+    "top1": "barn",
+    "prob1": "0.7207",
+    "nonflower_flag": "True",
+    "top5": "barn(0.72) | rapeseed(0.05) | hay(0.00) | tractor(0.00) | plow(0.00)"
+  },
+  {
+    "split": "test",
+    "path": "tulips/3476945045_97ff41e8ec_n.jpg",
+    "top1": "barn",
+    "prob1": "0.5379",
+    "nonflower_flag": "True",
+    "top5": "barn(0.54) | alp(0.05) | radio telescope(0.02) | balloon(0.02) | hay(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "tulips/7205698252_b972087cc2.jpg",
+    "top1": "lakeside",
+    "prob1": "0.3604",
+    "nonflower_flag": "True",
+    "top5": "lakeside(0.36) | picket fence(0.14) | bell pepper(0.05) | punching bag(0.02) | patio(0.02)"
+  },
+  {
+    "split": "test",
+    "path": "tulips/8702982836_75222725d7.jpg",
+    "top1": "palace",
+    "prob1": "0.5582",
+    "nonflower_flag": "True",
+    "top5": "palace(0.56) | monastery(0.08) | church(0.04) | castle(0.03) | triumphal arch(0.01)"
+  },
+  {
+    "split": "test",
+    "path": "tulips/8717900362_2aa508e9e5.jpg",
+    "top1": "palace",
+    "prob1": "0.6643",
+    "nonflower_flag": "True",
+    "top5": "palace(0.66) | castle(0.05) | monastery(0.01) | park bench(0.01) | triumphal arch(0.01)"
+  }
+]

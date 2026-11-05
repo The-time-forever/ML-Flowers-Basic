@@ -1,0 +1,345 @@
+[
+  {
+    "path": "roses/8462246855_1bdfee7478.jpg",
+    "split": "val",
+    "issue": "non-flower: vehicle",
+    "action": "exclude",
+    "evidence": "photo of a white Hummer; no rose"
+  },
+  {
+    "path": "roses/17953368844_be3d18cf30_m.jpg",
+    "split": "val",
+    "issue": "non-flower: building",
+    "action": "exclude",
+    "evidence": "gothic ceiling vault; no rose"
+  },
+  {
+    "path": "roses/15419696882_9394168a10_n.jpg",
+    "split": "val",
+    "issue": "non-flower: landscape",
+    "action": "exclude",
+    "evidence": "sunset over water; no rose"
+  },
+  {
+    "path": "roses/4256169180_55df2048a0.jpg",
+    "split": "val",
+    "issue": "non-flower: person/event",
+    "action": "exclude",
+    "evidence": "rodeo performer on horseback; no rose"
+  },
+  {
+    "path": "roses/8775267816_726ddc6d92_n.jpg",
+    "split": "val",
+    "issue": "species mismatch (flower present)",
+    "action": "keep",
+    "evidence": "pink gerbera-like flower; species doubtful, flower present"
+  },
+  {
+    "path": "tulips/13513644515_a51470b899.jpg",
+    "split": "val",
+    "issue": "species mismatch (flower present)",
+    "action": "keep",
+    "evidence": "daffodil field; species doubtful, flowers present"
+  },
+  {
+    "path": "roses/12323085443_8ac0cdb713_n.jpg",
+    "split": "test",
+    "issue": "non-flower: person/event",
+    "action": "exclude",
+    "evidence": "horse-drawn parade carriage; no rose"
+  },
+  {
+    "path": "tulips/16862422576_5226e8d1d0.jpg",
+    "split": "test",
+    "issue": "non-flower: building/landscape",
+    "action": "exclude",
+    "evidence": "Gardens by the Bay Supertrees; no tulip"
+  },
+  {
+    "path": "tulips/15275199229_962387f24d.jpg",
+    "split": "test",
+    "issue": "non-flower: building/landscape",
+    "action": "exclude",
+    "evidence": "windmills on water; no tulip"
+  },
+  {
+    "path": "tulips/13513851673_9d813dc7b0.jpg",
+    "split": "test",
+    "issue": "species mismatch (flower present)",
+    "action": "keep",
+    "evidence": "hyacinth field with barn; flowers present, species doubtful"
+  },
+  {
+    "path": "daisy/5700781400_65761f3fce.jpg",
+    "split": "train",
+    "issue": "non-flower: object",
+    "action": "exclude",
+    "evidence": "tree bark texture; no flower"
+  },
+  {
+    "path": "sunflowers/7176729016_d73ff2211e.jpg",
+    "split": "train",
+    "issue": "non-flower: person/event",
+    "action": "exclude",
+    "evidence": "outdoor market stalls; no sunflower"
+  },
+  {
+    "path": "tulips/17907238905_1ae121f8d9_m.jpg",
+    "split": "train",
+    "issue": "non-flower: building",
+    "action": "exclude",
+    "evidence": "war memorial; no tulip"
+  },
+  {
+    "path": "roses/5148639829_781eb7d346.jpg",
+    "split": "train",
+    "issue": "non-flower: landscape",
+    "action": "exclude",
+    "evidence": "field/fence landscape; no rose"
+  },
+  {
+    "path": "tulips/3511776685_3635087b12_n.jpg",
+    "split": "train",
+    "issue": "non-flower: food",
+    "action": "exclude",
+    "evidence": "strawberries; no tulip"
+  },
+  {
+    "path": "tulips/4522153453_06437ca3af_m.jpg",
+    "split": "train",
+    "issue": "non-flower: person/event",
+    "action": "exclude",
+    "evidence": "person painting outdoors; no tulip"
+  },
+  {
+    "path": "tulips/14116780333_7836f4448c.jpg",
+    "split": "train",
+    "issue": "non-flower: object",
+    "action": "exclude",
+    "evidence": "water fountain; no tulip"
+  },
+  {
+    "path": "tulips/6325571510_7544b27e57_n.jpg",
+    "split": "train",
+    "issue": "non-flower: object",
+    "action": "exclude",
+    "evidence": "teacup and biscuits; no tulip"
+  },
+  {
+    "path": "tulips/15275144259_f9a18ec9cb.jpg",
+    "split": "train",
+    "issue": "non-flower: building",
+    "action": "exclude",
+    "evidence": "steel arch bridge; no tulip"
+  },
+  {
+    "path": "roses/3921794817_276eb4386b.jpg",
+    "split": "train",
+    "issue": "non-flower: interior",
+    "action": "exclude",
+    "evidence": "bedroom interior; no rose"
+  },
+  {
+    "path": "roses/2863863372_605e29c03e_m.jpg",
+    "split": "train",
+    "issue": "non-flower: building",
+    "action": "exclude",
+    "evidence": "brick pub building; no rose"
+  },
+  {
+    "path": "dandelion/14648777167_1d92d403c9_n.jpg",
+    "split": "train",
+    "issue": "non-flower: landscape",
+    "action": "exclude",
+    "evidence": "green field and tree; no dandelion"
+  },
+  {
+    "path": "roses/15750320284_22ef21c682.jpg",
+    "split": "train",
+    "issue": "non-flower: person/event",
+    "action": "exclude",
+    "evidence": "marching band; no rose"
+  },
+  {
+    "path": "daisy/1355787476_32e9f2a30b.jpg",
+    "split": "train",
+    "issue": "non-flower: object",
+    "action": "exclude",
+    "evidence": "hand holding a water drop; no daisy"
+  },
+  {
+    "path": "roses/12450781274_eb78723921.jpg",
+    "split": "train",
+    "issue": "non-flower: vehicle",
+    "action": "exclude",
+    "evidence": "tram street scene; no rose"
+  },
+  {
+    "path": "roses/4292443009_3a2831b0b9_m.jpg",
+    "split": "train",
+    "issue": "non-flower: person/event",
+    "action": "exclude",
+    "evidence": "rodeo performer; no rose"
+  },
+  {
+    "path": "roses/12045735155_42547ce4e9_n.jpg",
+    "split": "train",
+    "issue": "non-flower: person/event",
+    "action": "exclude",
+    "evidence": "marching band; no rose"
+  },
+  {
+    "path": "roses/3655527028_0fab2b547d_n.jpg",
+    "split": "train",
+    "issue": "non-flower: interior/object",
+    "action": "exclude",
+    "evidence": "decorative china cabinet; no living rose"
+  },
+  {
+    "path": "tulips/14097328354_4f1469a170.jpg",
+    "split": "train",
+    "issue": "non-flower: person/event",
+    "action": "exclude",
+    "evidence": "person with camera; no tulip"
+  },
+  {
+    "path": "tulips/13910126337_53faf1d214_n.jpg",
+    "split": "train",
+    "issue": "non-flower: landscape",
+    "action": "exclude",
+    "evidence": "branches over water; no tulip"
+  },
+  {
+    "path": "roses/9406573080_60eab9278e_n.jpg",
+    "split": "train",
+    "issue": "non-flower: person/event",
+    "action": "exclude",
+    "evidence": "crowd at a festival; no rose"
+  },
+  {
+    "path": "roses/2364976562_a184463083_m.jpg",
+    "split": "train",
+    "issue": "non-flower: object",
+    "action": "exclude",
+    "evidence": "dolls; no rose"
+  },
+  {
+    "path": "tulips/15275504998_ca9eb82998.jpg",
+    "split": "train",
+    "issue": "non-flower: building/object",
+    "action": "exclude",
+    "evidence": "window and bicycle; no tulip"
+  },
+  {
+    "path": "tulips/13910131718_731353d84c_n.jpg",
+    "split": "train",
+    "issue": "non-flower: person/event",
+    "action": "exclude",
+    "evidence": "black-and-white people; no tulip"
+  },
+  {
+    "path": "roses/5193918046_d44e4fcd75_m.jpg",
+    "split": "train",
+    "issue": "non-flower: decoration",
+    "action": "exclude",
+    "evidence": "holiday candles/decor; no rose"
+  },
+  {
+    "path": "roses/180613732_3a7aba0b80_n.jpg",
+    "split": "train",
+    "issue": "non-flower: landscape/animal",
+    "action": "exclude",
+    "evidence": "forest and ducks; no rose"
+  },
+  {
+    "path": "roses/319298955_0c72bd36bf.jpg",
+    "split": "train",
+    "issue": "non-flower: food",
+    "action": "exclude",
+    "evidence": "chocolate cake with decorative roses; no real flower"
+  },
+  {
+    "path": "tulips/7064813645_f7f48fb527.jpg",
+    "split": "train",
+    "issue": "non-flower: vehicle/field",
+    "action": "exclude",
+    "evidence": "tractor in a field; no tulip"
+  },
+  {
+    "path": "sunflowers/9381481549_5a5d503e42_n.jpg",
+    "split": "train",
+    "issue": "non-flower: plants",
+    "action": "exclude",
+    "evidence": "green seedlings, no sunflower bloom"
+  },
+  {
+    "path": "roses/16334786972_1b3e71cab8_m.jpg",
+    "split": "train",
+    "issue": "non-flower: illustration/decoration",
+    "action": "exclude",
+    "evidence": "vintage seed catalogue page; no real rose"
+  },
+  {
+    "path": "roses/2568105249_15720d081f_n.jpg",
+    "split": "train",
+    "issue": "non-flower: interior",
+    "action": "exclude",
+    "evidence": "interior room with wedding decor; no rose"
+  },
+  {
+    "path": "tulips/14487705209_ea723109e1_m.jpg",
+    "split": "train",
+    "issue": "non-flower: illustration/decoration",
+    "action": "exclude",
+    "evidence": "tulip illustration; no real flower"
+  },
+  {
+    "path": "dandelion/4573204385_9b71e96b35_m.jpg",
+    "split": "train",
+    "issue": "non-flower: plants",
+    "action": "exclude",
+    "evidence": "grass blades with dew; no dandelion"
+  },
+  {
+    "path": "roses/6069602140_866eecf7c2_m.jpg",
+    "split": "train",
+    "issue": "non-flower: illustration/decoration",
+    "action": "exclude",
+    "evidence": "tattoo artwork; no real rose"
+  },
+  {
+    "path": "sunflowers/7270375648_79f0caef42_n.jpg",
+    "split": "train",
+    "issue": "non-flower: light art",
+    "action": "exclude",
+    "evidence": "abstract sunflower-shaped light installation; no real flower"
+  },
+  {
+    "path": "roses/15174615529_144ae28bdb_n.jpg",
+    "split": "train",
+    "issue": "species mismatch (flower present)",
+    "action": "keep",
+    "evidence": "portulaca-like flower; species doubtful, flower present"
+  },
+  {
+    "path": "roses/5212885371_fe27c406a2_n.jpg",
+    "split": "train",
+    "issue": "species mismatch (flower present)",
+    "action": "keep",
+    "evidence": "orange gerbera-like flower; species doubtful, flower present"
+  },
+  {
+    "path": "tulips/4546299243_23cd58eb43.jpg",
+    "split": "train",
+    "issue": "species mismatch (flower present)",
+    "action": "keep",
+    "evidence": "cherry blossom path; flowers present, species doubtful"
+  },
+  {
+    "path": "tulips/5674707464_dc18de05b1.jpg",
+    "split": "train",
+    "issue": "species mismatch (flower present)",
+    "action": "keep",
+    "evidence": "lavender field; flowers present, species doubtful"
+  }
+]

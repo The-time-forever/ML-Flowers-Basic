@@ -1,0 +1,65 @@
+path,split,issue,action,evidence,source_url,source_title
+roses/8462246855_1bdfee7478.jpg,val,non-flower: vehicle,exclude,photo of a white Hummer; no rose,,
+roses/17953368844_be3d18cf30_m.jpg,val,non-flower: building,exclude,gothic ceiling vault; no rose,,
+roses/15419696882_9394168a10_n.jpg,val,non-flower: landscape,exclude,sunset over water; no rose,,
+roses/4256169180_55df2048a0.jpg,val,non-flower: person/event,exclude,rodeo performer on horseback; no rose,,
+roses/8775267816_726ddc6d92_n.jpg,val,class mismatch: non-rose flower,exclude,"The enlarged original shows numerous narrow radial florets in a composite flower head, inconsistent with a rose. Exact taxon is not assigned; exclude from roses. Original title: 009 pink star burst.",https://www.flickr.com/photos/rosalee333/8775267816/,009  pink  star burst
+tulips/13513644515_a51470b899.jpg,val,class mismatch: hyacinth field,exclude,"Enlarged original shows dense spikes of many small flowers and strap-like leaves, consistent with hyacinths rather than tulips. Previous daffodil description corrected. Exclude from tulips.",https://www.flickr.com/photos/nikontino/13513644515/,20140330-DSC_1409
+roses/12323085443_8ac0cdb713_n.jpg,test,non-flower: person/event,exclude,horse-drawn parade carriage; no rose,,
+tulips/16862422576_5226e8d1d0.jpg,test,non-flower: building/landscape,exclude,Gardens by the Bay Supertrees; no tulip,,
+tulips/15275199229_962387f24d.jpg,test,non-flower: building/landscape,exclude,windmills on water; no tulip,,
+tulips/13513851673_9d813dc7b0.jpg,test,class mismatch: hyacinth field,exclude,Enlarged original shows dense blue and pink hyacinth flower spikes; no identifiable tulip target. Exclude from tulips.,https://www.flickr.com/photos/nikontino/13513851673/,20140330-DSC_1358
+daisy/5700781400_65761f3fce.jpg,train,confirmed target or seed-head present,keep,A white ray-flowered head with a yellow centre is clearly visible; original title: Daisy on the rocks.,https://www.flickr.com/photos/viatorius/5700781400/,Daisy on the rocks
+sunflowers/7176729016_d73ff2211e.jpg,train,non-flower: person/event,exclude,outdoor market stalls; no sunflower,,
+tulips/17907238905_1ae121f8d9_m.jpg,train,non-flower: building,exclude,war memorial; no tulip,,
+roses/5148639829_781eb7d346.jpg,train,non-flower: landscape,exclude,field/fence landscape; no rose,,
+tulips/3511776685_3635087b12_n.jpg,train,non-flower: food,exclude,strawberries; no tulip,,
+tulips/4522153453_06437ca3af_m.jpg,train,non-flower: person/event,exclude,person painting outdoors; no tulip,,
+tulips/14116780333_7836f4448c.jpg,train,non-flower: object,exclude,water fountain; no tulip,,
+tulips/6325571510_7544b27e57_n.jpg,train,non-flower: object,exclude,teacup and biscuits; no tulip,,
+tulips/15275144259_f9a18ec9cb.jpg,train,non-flower: building,exclude,steel arch bridge; no tulip,,
+roses/3921794817_276eb4386b.jpg,train,non-flower: interior,exclude,bedroom interior; no rose,,
+roses/2863863372_605e29c03e_m.jpg,train,non-flower: building,exclude,brick pub building; no rose,,
+dandelion/14648777167_1d92d403c9_n.jpg,train,confirmed target or seed-head present,keep,Yellow flowers are visible throughout the field; original title: Blinking Dandelions. The previous no-flower rationale is unsupported.,https://www.flickr.com/photos/winterpearl/14648777167/,Blinking Dandelions
+roses/15750320284_22ef21c682.jpg,train,non-flower: person/event,exclude,marching band; no rose,,
+daisy/1355787476_32e9f2a30b.jpg,train,non-flower: object,exclude,hand holding a water drop; no daisy,,
+roses/12450781274_eb78723921.jpg,train,non-flower: vehicle,exclude,tram street scene; no rose,,
+roses/4292443009_3a2831b0b9_m.jpg,train,non-flower: person/event,exclude,rodeo performer; no rose,,
+roses/12045735155_42547ce4e9_n.jpg,train,non-flower: person/event,exclude,marching band; no rose,,
+roses/3655527028_0fab2b547d_n.jpg,train,non-flower: interior/object,exclude,decorative china cabinet; no living rose,,
+tulips/14097328354_4f1469a170.jpg,train,non-flower: person/event,exclude,person with camera; no tulip,,
+tulips/13910126337_53faf1d214_n.jpg,train,non-flower: landscape,exclude,branches over water; no tulip,,
+roses/9406573080_60eab9278e_n.jpg,train,non-flower: person/event,exclude,crowd at a festival; no rose,,
+roses/2364976562_a184463083_m.jpg,train,non-flower: object,exclude,dolls; no rose,,
+tulips/15275504998_ca9eb82998.jpg,train,non-flower: building/object,exclude,window and bicycle; no tulip,,
+tulips/13910131718_731353d84c_n.jpg,train,non-flower: person/event,exclude,black-and-white people; no tulip,,
+roses/5193918046_d44e4fcd75_m.jpg,train,non-flower: decoration,exclude,holiday candles/decor; no rose,,
+roses/180613732_3a7aba0b80_n.jpg,train,non-flower: landscape/animal,exclude,forest and ducks; no rose,,
+roses/319298955_0c72bd36bf.jpg,train,non-flower: food,exclude,chocolate cake with decorative roses; no real flower,,
+tulips/7064813645_f7f48fb527.jpg,train,class mismatch: tractor with non-tulip flower rows,exclude,"Photograph contains flowers, but the visible dense blue flower rows are consistent with hyacinths; no identifiable tulip target. Exclude from tulips. Replaces the incorrect no-flower rationale.",https://www.flickr.com/photos/nikontino/7064813645/,ALG_8321
+sunflowers/9381481549_5a5d503e42_n.jpg,train,confirmed target or seed-head present,keep,A small yellow flower head is visible on the right; original title: Sunflowers Wk 7. The previous no-bloom rationale is unsupported.,https://www.flickr.com/photos/myeral/9381481549/,Sunflowers Wk 7
+roses/16334786972_1b3e71cab8_m.jpg,train,non-flower: illustration/decoration,exclude,vintage seed catalogue page; no real rose,,
+roses/2568105249_15720d081f_n.jpg,train,normal rose sample,keep,White rose arrangement visible in the room; author tags include roses and white. User confirmed this as a normal rose sample; retain without a doubtful flag.,https://www.flickr.com/photos/sherrysrosecottage/2568105249/,A corner of my family room.
+tulips/14487705209_ea723109e1_m.jpg,train,non-flower: illustration/decoration,exclude,tulip illustration; no real flower,,
+dandelion/4573204385_9b71e96b35_m.jpg,train,confirmed target or seed-head present,keep,"Macro photograph of seed parachutes with water drops, not grass blades; consistent with seed-head photographs retained elsewhere. Original title: Liquid Sun Seed.",https://www.flickr.com/photos/ladydragonflyherworld/4573204385/,Liquid Sun Seed
+roses/6069602140_866eecf7c2_m.jpg,train,non-flower: illustration/decoration,exclude,tattoo artwork; no real rose,,
+sunflowers/7270375648_79f0caef42_n.jpg,train,non-flower: light art,exclude,abstract sunflower-shaped light installation; no real flower,,
+roses/15174615529_144ae28bdb_n.jpg,train,class mismatch: clover image with decorative overlay,exclude,Original author title is Pink clover flowers. Main photograph contains small pink non-rose flowers; corner rose is a graphic overlay. Exclude from roses; no exact botanical relabelling.,https://www.flickr.com/photos/82066314@N06/15174615529/,Pink clover flowers
+roses/5212885371_fe27c406a2_n.jpg,train,class mismatch: gerbera-like composite flower heads,exclude,"Local original clearly shows daisy-like composite heads with central discs, consistent with gerbera, rather than roses. Original Flickr page returned 404. Exclude from roses without relabelling to daisy.",https://www.flickr.com/photos/surfergirl30/5212885371/,
+tulips/4546299243_23cd58eb43.jpg,train,reviewed: target present in mixed garden scene,keep,Larger author image reveals orange cup-shaped tulips in the lower-left flower bed under the tree. Original author keywords include tulips. Keep original label; earlier cherry-blossom-only description was incomplete.,https://www.flickr.com/photos/andrea_44/4546299243/,Perfect day to sit in the park! 
+tulips/5674707464_dc18de05b1.jpg,train,class mismatch: blue spike-flowered border,exclude,"Larger original shows a continuous border of many small flowers along elongated blue spikes, not tulip flowers. Exact taxon is not assigned. Generic author tag tulips is insufficient to establish the image label.",https://www.flickr.com/photos/gnuckx/5674707464/,Keukenhof Holland Creative Commons by gnuckx
+roses/16424992340_c1d9eb72b4.jpg,train,irrelevant image or non-photographic depiction,exclude,Waterfront and boat; no visible rose. Original title: Rays of Sunlight.,https://www.flickr.com/photos/dvanzuijlekom/16424992340/,Rays of Sunlight
+roses/4248222578_b4d5868b32.jpg,train,irrelevant image or non-photographic depiction,exclude,Marching brass band. Original title: OSU Tuba Line.,https://www.flickr.com/photos/prayitnophotography/4248222578/,OSU Tuba Line
+roses/8590442797_07fa2141c0_n.jpg,train,irrelevant image or non-photographic depiction,exclude,"Retail sign reading Roses; no flower. Original title: Roses in Akron, Ohio.",https://www.flickr.com/photos/fanofretail/8590442797/,"Roses in Akron, Ohio"
+roses/16316557109_7fc55c1cbc_m.jpg,train,irrelevant image or non-photographic depiction,exclude,"Botanical catalogue illustration; exclude under the existing real-flower-photo policy, consistent with other excluded illustrations.",https://www.flickr.com/photos/biodivlibrary/16316557109/,n37_w1150
+tulips/16702188449_3dacce90b2_m.jpg,val,irrelevant image or non-photographic depiction,exclude,Supertree structure and foliage; no visible tulip. Original title: Supertree.,https://www.flickr.com/photos/ahmed_xp/16702188449/,Supertree
+tulips/16862374316_4135908d4c_m.jpg,val,irrelevant image or non-photographic depiction,exclude,Decorative windmill; no visible tulip. Original title: Windmill.,https://www.flickr.com/photos/ahmed_xp/16862374316/,Windmill
+tulips/17202535346_ab828e779b.jpg,val,irrelevant image or non-photographic depiction,exclude,Tree canopy. Original title: Split Leaf Japanese maple trees.,https://www.flickr.com/photos/55229469@N07/17202535346/,Split Leaf Japanese maple trees
+tulips/6948239566_0ac0a124ee_n.jpg,val,irrelevant image or non-photographic depiction,exclude,Printed mascot design sheet; no flower. Original title: Kurogawa Onsen.,https://www.flickr.com/photos/14541393@N03/6948239566/,Kurogawa Onsen 黑川溫泉
+tulips/7070694881_e9a331fa4e_n.jpg,val,irrelevant image or non-photographic depiction,exclude,Tree trunks and canopy; no visible tulip. Original Flickr oEmbed returned 404; decision is based on the local image.,https://www.flickr.com/photos/seanfx/7070694881/,
+roses/2408236801_f43c6bcff2.jpg,val,irrelevant image or non-photographic depiction,exclude,Hanging teacup ornaments; no real flower. Original title: Tea Room.,https://www.flickr.com/photos/sherrysrosecottage/2408236801/,Tea Room
+roses/7211616670_2d49ecb3a5_m.jpg,val,irrelevant image or non-photographic depiction,exclude,Cupcake tower; flower-like icing decorations. Original title: Love and lace wedding cupcake tower.,https://www.flickr.com/photos/kristinausk/7211616670/,Love and lace wedding cupcake tower
+tulips/5687705933_55a8c2dbac.jpg,test,irrelevant image or non-photographic depiction,exclude,Tree branches viewed through a window; no visible tulip. Original title: Botanic garden - Cluj-Napoca.,https://www.flickr.com/photos/bortescristian/5687705933/,Botanic garden - Cluj-Napoca
+tulips/15275190769_0ed7bbf490.jpg,test,irrelevant image or non-photographic depiction,exclude,Green wooden building and bicycle; no visible tulip. Original title: Holland.,https://www.flickr.com/photos/phalaenopsisaphrodite523/15275190769/,Holland
+sunflowers/418056361_1dfac1c151_n.jpg,test,irrelevant image or non-photographic depiction,exclude,"Photograph of a sunflower painting, not a living flower; exclude under the existing real-flower-photo policy.",https://www.flickr.com/photos/giopuo/418056361/,"Girasoli, close close up"
+roses/475936554_a2b38aaa8e.jpg,test,reviewed: identifiable vegetative rose parts in scope,keep,"Original title Rose Thorns and author tags roses, leaves and stem agree with the local rose stem/leaf photograph. Retain as a vegetative plant detail, consistent with allowing non-bloom stages; authenticity of a flower is not required for identifiable plant parts.",https://www.flickr.com/photos/peasap/475936554/,Rose Thorns
