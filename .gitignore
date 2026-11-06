@@ -18,3 +18,12 @@ runs/
 *.pt
 *.pth
 *.onnx
+
+# LaTeX build artefacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.xdv
+*.synctex.gz

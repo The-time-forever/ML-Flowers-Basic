@@ -1,0 +1,4 @@
+category train val test total
+scene 24 4 3 31
+mismatch 4 2 1 7
+nonphoto 9 7 3 19

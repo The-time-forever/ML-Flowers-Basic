@@ -1,0 +1,6 @@
+class simple residual_se convnext
+daisy 84.103 88.172 97.354
+dandelion 89.286 91.166 98.893
+roses 78.173 79.348 94.737
+sunflowers 91.0 89.593 98.578
+tulips 80.0 81.579 94.606
