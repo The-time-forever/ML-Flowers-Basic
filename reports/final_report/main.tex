@@ -581,16 +581,16 @@ EfficientNetV2-M & 224 & 10 & 94.01\% & 96.73\% & 0.9669 \\
 \node[branch] (preB) at (3.2,-1.55) {短边缩放 256\\中心裁剪 $224\times224$};
 \node[branch] (cnnB) at (6.3,-1.55) {EfficientNetV2-M\\ImageNet 预训练\\52.86M};
 \node[branch] (probB) at (9.6,-1.55) {5 类 softmax $p_B$\\翻转 TTA 平均};
-\node[merge] (avg) at (12.8,0) {等权平均\\$\bar p=(p_A+p_B)/2$};
-\node[finalbox, text width=2.0cm] (arg) at (15.3,0) {$\arg\max$\\最终类别};
+\node[merge] (avg) at (13.1,0) {等权平均\\$\bar p=(p_A+p_B)/2$};
+\node[finalbox, text width=2.0cm] (arg) at (16.0,0) {$\arg\max$\\最终类别};
 \draw[arr] (input.east) -- ++(0.45,0) |- (preA.west);
 \draw[arr] (input.east) -- ++(0.45,0) |- (preB.west);
 \draw[arr] (preA) -- (cnnA);
 \draw[arr] (cnnA) -- (probA);
 \draw[arr] (preB) -- (cnnB);
 \draw[arr] (cnnB) -- (probB);
-\draw[arr] (probA.east) -- ++(0.4,0) |- (avg.west);
-\draw[arr] (probB.east) -- ++(0.4,0) |- (avg.west);
+\draw[arr] (probA.east) -- ++(0.45,0) |- (avg.west);
+\draw[arr] (probB.east) -- ++(0.45,0) |- (avg.west);
 \draw[arr] (avg) -- (arg);
 \node[font=\scriptsize\bfseries, text=teal!80!black, above=4mm of cnnA] {分支 A：EMA 0.995};
 \node[font=\scriptsize\bfseries, text=teal!80!black, below=4mm of cnnB] {分支 B：无 EMA};
@@ -1022,6 +1022,8 @@ tulips     & 0.956 & 0.948 & 0.952 & 115 \\
 \section{完整代码}
 \label{app:code}
 
-本文的完整源代码见 GitHub 仓库：\url{https://github.com/The-time-forever/ML-Flowers-Basic}。
+本文的完整源代码见以下 GitHub 仓库：
+
+\url{https://github.com/The-time-forever/ML-Flowers-Basic}。
 
 \end{document}
